@@ -3,7 +3,8 @@ title: "ARI Roadmap"
 version: "1.0.0"
 status: "Final — Evolution Plan"
 created: "2025-11-26"
-type: "roadmap"
+type: "roadmap"  
+doi: "10.5281/zenodo.17743096"  
 ---
 
 # Aurora Research Initiative — Roadmap (v1.0.0)
