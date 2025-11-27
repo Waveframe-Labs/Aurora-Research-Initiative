@@ -1,130 +1,186 @@
 ---
-title: "Aurora Research Initiative (ARI)"
+title: "Aurora Research Initiative (ARI) — Repository Overview"
 version: "1.0.0"
-status: "Final — Architecture Stabilizing"
-created: "2025-11-26"
-type: "governance"
+status: "Active"
+created: "2025-11-27"
+updated: "2025-11-27"
+type: "documentation"
+author: "Aurora Research Initiative (ARI)"
+dependencies:
+  - "ARI_BOUNDARIES_AND_RESPONSIBILITIES.md"
+  - "GOVERNANCE_MODEL.md"
+  - "EPISTEMIC_DOCTRINE.md"
+anchors:
+  - "ARI-README-v1.0"
 ---
 
 # Aurora Research Initiative (ARI)
 
-The **Aurora Research Initiative (ARI)** is the governance and epistemic framework that
-oversees the development of the **Aurora Workflow Orchestration (AWO)** method, the
-**CRI-CORE** deterministic engine, and the initiative’s scientific case studies  
-(e.g., Waveframe v4.0 and the Societal Progress Simulator).
+The **Aurora Research Initiative (ARI)** is the governance and epistemic foundation of the Aurora ecosystem.  
+ARI defines the institutional rules, constraints, doctrines, metadata models, and change-control structures that govern:
 
-ARI establishes the institutional layer required for reproducible AI-human research:
-governance rules, identity anchoring, provenance norms, metadata policy, documentation
-standards, and the philosophical foundation that guides the entire ecosystem.
+- **AWO** — the Aurora Workflow Orchestration method  
+- **CRI-CORE** — the deterministic execution and enforcement engine  
+- **Waveframe Systems** — engineering, tooling, and applied research  
+- **Case Studies** — scientific models developed under ARI governance  
 
----
-
-## 1. Purpose
-
-ARI serves as the **institutional backbone** of the Aurora ecosystem.  
-It defines:
-
-- governance structure and role separation  
-- epistemic doctrine for audit-first science  
-- metadata and provenance requirements  
-- evolutionary roadmap for AWO, CRI-CORE, and related research  
-- integration principles for scientific case studies  
-- open-science and reproducibility philosophy  
+ARI is not an engineering repo. It contains **no code**, **no workflows**, and **no tooling logic**.  
+Its role is to define institutional correctness, epistemic rigor, and governance invariants.
 
 ---
 
-## 2. Position in the Ecosystem
+## Purpose
 
-ARI sits **above** all technical and scientific layers:
+ARI establishes:
+
+- **Epistemic doctrine** — how knowledge is defined, validated, and governed  
+- **Institutional governance** — separation of roles, powers, and responsibilities  
+- **Method constraints** — what the AWO method must uphold  
+- **Tooling constraints** — what CRI is allowed and forbidden to enforce  
+- **Organizational hierarchy** — the relationship between ARI, Waveframe Labs, and Waveframe Systems  
+- **Versioning & release policy** — how the ecosystem evolves  
+- **Metadata policy** — the schema required for all artifacts  
+
+ARI provides the rules.  
+Waveframe Systems builds the tools.  
+Waveframe Labs operates the ecosystem.
+
+---
+
+## Position in the Ecosystem
+
+The Aurora ecosystem follows a strict institutional hierarchy:
 ```
 Waveframe Labs (organization)
-└── Aurora Research Initiative (institutional governance)
-├── AWO — workflow method and audit-first execution
-├── CRI-CORE — deterministic tooling engine (in development)
-└── Case Studies
-├── Waveframe v4.0 (cosmology)
-└── Societal Progress Simulator
+│
+├── Aurora Research Initiative (ARI)
+│ Governance • Epistemics • Doctrine • Constraints
+│
+└── Waveframe Systems
+Engineering • Tooling • Method Execution
+│
+├── AWO — Workflow Methodology
+├── CRI-CORE — Deterministic Execution Engine
+└── Case Studies (Waveframe v4.0, Societal Health Simulator, etc.)
 ```
 
-ARI is *not* a workflow, *not* a codebase, and *not* a scientific model.  
-It is the **governance layer that defines the rules** for all other components.
+### ARI governs method + tooling + engineering  
+but  
+### does not implement method or tooling.
+
+This separation is foundational to Aurora's integrity and reproducibility guarantees.
 
 ---
 
-## 3. Current Development Status
-
-ARI is in **early architecture stabilization**.  
-The following documents will be added as they are finalized:
-
-- `ARI_ARCHITECTURE.md` — formal institutional architecture  
-- `GOVERNANCE_MODEL.md` — role separation, decision rules, oversight  
-- `EPISTEMIC_DOCTRINE.md` — audit-first science, falsifiability, provenance  
-- `INIT_LOG.md` — chronological development log  
-- `ANCHORS/` — stable anchor tags for governance events  
-- `ROADMAP.md` — evolution of AWO, CRI-CORE, and institutional processes  
-
-No licenses have been applied yet.  
-Licensing will be determined once the document structure is stable.
-
----
-
-## 4. Guiding Principles
-
-ARI is founded on a set of evolving principles:
-
-1. **Audit-first epistemology**  
-   Scientific claims must be validated through recorded, verifiable processes.
-
-2. **Role separation**  
-   No single entity controls method, tooling, execution, and governance.
-
-3. **Deterministic provenance**  
-   Artifacts must be reconstructible and identity-verified.
-
-4. **Human-in-the-loop oversight**  
-   Human reasoning remains necessary for interpretation and falsifiability.
-
-5. **Institutional independence**  
-   Governance must remain independent of any single workflow or tool.
-
----
-
-## 5. Repository Structure (initial)
+## Repository Structure
 ```
-/README.md
-/architecture/ (institutional architecture docs)
-/governance/ (governance model, roles, rules)
-/epistemics/ (epistemic doctrine)
-/anchors/ (stable anchor tags)
-/logs/ (INIT_LOG, GOV_LOG)
-/roadmap/ (initiative evolution)
+architecture/ High-level institutional architecture for ARI
+epistemics/ Epistemic doctrine and metadata policy
+governance/ Constitutional documents and operating rules
+logs/ Governance and initialization logs
+roadmap/ High-level development and institutional roadmap
+LICENSE Apache 2.0 license
+CITATION.cff Citation metadata
+README.md This document
 ```
 
-This structure will evolve as ARI stabilizes.
+---
+
+## Constitutional Documents
+
+Located under `/governance/`:
+
+- **ARI_BOUNDARIES_AND_RESPONSIBILITIES.md**  
+- **METHOD_CONSTRAINTS.md**  
+- **TOOLING_CONSTRAINTS.md**  
+- **ROLE_SEPARATION_CHARTER.md**  
+- **CHANGE_CONTROL_AND_VERSIONING_POLICY.md**  
+- **GOVERNANCE_MODEL.md**  
+- **GOVERNANCE_LOG.md**
+
+These define ARI’s authority, responsibilities, and institutional guarantees.
 
 ---
 
-## 6. Relationship to External Projects
+## Epistemic Foundations
 
-The following repositories operate under ARI governance:
+Located under `/epistemics/`:
 
-- **Aurora Workflow Orchestration (AWO)**  
-- **CRI-CORE** (under development)  
-- **Waveframe v4.0** — observer-aware cosmology  
-- **Societal Progress Simulator** — societal modeling framework  
+- **EPISTEMIC_DOCTRINE.md**  
+- **METADATA_POLICY.md**
 
-Each project maintains operational independence but adheres to ARI’s governance and epistemic rules.
-
----
-
-## 7. Contact
-
-Lead Researcher: Shawn C. Wright  
-ORCID: 0009-0006-6043-9295  
-Email: swright@waveframelabs.org
+These documents define Aurora’s epistemic worldview:  
+how knowledge is represented, constrained, validated, and archived.
 
 ---
 
-This document will expand as ARI formalization progresses.
+## Architecture
 
+Located under `/architecture/`:
 
+- **ARI_ARCHITECTURE.md**  
+  High-level structural model of ARI and its governance layers.
+
+---
+
+## Logs
+
+Located under `/logs/`:
+
+- **INIT_LOG.md**  
+- **GOVERNANCE_LOG.md**
+
+These record institutional events, releases, approvals, and governance actions.
+
+---
+
+## Roadmap
+
+Located under `/roadmap/`:
+
+- **ROADMAP.md**  
+  High-level guidance for future ARI development and institutional evolution.
+
+---
+
+## Licensing
+
+This repository is licensed under the **Apache License 2.0**, enabling:
+
+- open scientific use  
+- reproducibility  
+- modification  
+- redistribution  
+
+with proper attribution.
+
+---
+
+## Citation  
+*(Replace DOI below after Zenodo minting)*  
+
+To cite ARI:
+
+```bibtex
+@software{
+  title        = {Aurora Research Initiative (ARI)},
+  author       = {Wright, Shawn C.},
+  year         = {2025},
+  doi          = {10.5281/zenodo.UNKNOWN},
+  url          = {https://github.com/Waveframe-Labs/Aurora-Research-Initiative},
+}
+```
+## Status
+
+Version: 1.0.0
+```  
+Role: Institutional Governance Layer
+Scope: Full governance, epistemics, constraints, and constitutional structure
+Release: v1.0.0 (pending DOI minting)    
+```  
+## Contact
+
+For collaboration or research inquiries:
+```  
+swright@waveframelabs.org
+```  
