@@ -3,7 +3,8 @@ title: "Metadata Policy"
 version: "1.0.0"
 status: "Final — Metadata Requirements"
 created: "2025-11-26"
-type: "epistemics"
+type: "epistemics"  
+doi: "10.5281/zenodo.17743096"  
 ---
 
 # Aurora Research Initiative — Metadata Policy (v1.0.0)
