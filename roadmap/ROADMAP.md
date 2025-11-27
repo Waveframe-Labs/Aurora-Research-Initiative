@@ -1,7 +1,7 @@
 ---
 title: "ARI Roadmap"
 version: "1.0.0"
-status: "Draft — Evolution Plan"
+status: "Final — Evolution Plan"
 created: "2025-11-26"
 type: "roadmap"
 ---
