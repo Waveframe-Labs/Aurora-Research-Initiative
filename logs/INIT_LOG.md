@@ -3,7 +3,8 @@ title: "ARI Initialization Log"
 version: "1.0.0"
 status: "Active — Append-Only"
 created: "2025-11-26"
-type: "log"
+type: "log"  
+doi: "10.5281/zenodo.17743096"  
 ---
 
 # Aurora Research Initiative — Initialization Log (INIT_LOG.md)
