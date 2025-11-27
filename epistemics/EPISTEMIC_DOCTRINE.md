@@ -1,7 +1,7 @@
 ---
 title: "Epistemic Doctrine"
 version: "1.0.0"
-status: "Draft — Epistemic Foundation"
+status: "Final — Epistemic Foundation"
 created: "2025-11-26"
 type: "epistemics"
 ---
