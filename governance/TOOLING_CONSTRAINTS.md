@@ -1,7 +1,7 @@
 ---
 title: "Tooling Constraints"
 version: "1.0.0"
-status: "Draft"
+status: "Final"
 created: "2025-11-27"
 type: "governance"
 author: "ARI Institutional Coordinator"
