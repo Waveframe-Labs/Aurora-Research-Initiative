@@ -3,7 +3,8 @@ title: "Governance Model"
 version: "1.0.0"
 status: "Final — Role & Oversight Structure"
 created: "2025-11-26"
-type: "governance"
+type: "governance"  
+doi: "10.5281/zenodo.17743096"  
 ---
 
 # Aurora Research Initiative — Governance Model (v1.0.0)
