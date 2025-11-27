@@ -14,7 +14,8 @@ anchors:
   - "ARI-README-v1.0"
 ---
 
-# Aurora Research Initiative (ARI)
+# Aurora Research Initiative (ARI)  
+[![DOI](https://zenodo.org/badge/1105021427.svg)](https://doi.org/10.5281/zenodo.17743096)
 
 The **Aurora Research Initiative (ARI)** is the governance and epistemic foundation of the Aurora ecosystem.  
 ARI defines the institutional rules, constraints, doctrines, metadata models, and change-control structures that govern:
