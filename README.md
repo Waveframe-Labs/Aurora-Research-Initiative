@@ -157,19 +157,29 @@ with proper attribution.
 
 ---
 
-## Citation  
+## How to Cite
 
-To cite ARI:
+If you use the Aurora Research Initiative (ARI) in your research, please cite the specific version you used.
+
+**Latest version DOI (concept DOI):**  
+https://doi.org/10.5281/zenodo.17743096
+
+**This release (v1.0.1):**  
+https://doi.org/10.5281/zenodo.17743097
+
+### BibTeX (specific release)
 
 ```bibtex
-@software{
+@software{ari_v1_0_1,
+  author       = {Wright, Shawn},
   title        = {Aurora Research Initiative (ARI)},
-  author       = {Wright, Shawn C.},
-  year         = {2025},
-  doi          = {10.5281/zenodo.17743097},  
-  url          = {https://github.com/Waveframe-Labs/Aurora-Research-Initiative},
+  version      = {v1.0.1},
+  doi          = {10.5281/zenodo.17743097},
+  url          = {https://doi.org/10.5281/zenodo.17743097},
+  year         = {2025}
 }
 ```
+
 ## Status
 
 Version: 1.0.0
