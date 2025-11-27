@@ -1,7 +1,7 @@
 ---
 title: "Aurora Research Initiative (ARI)"
 version: "1.0.0"
-status: "Draft — Architecture Stabilizing"
+status: "Final — Architecture Stabilizing"
 created: "2025-11-26"
 type: "governance"
 ---
