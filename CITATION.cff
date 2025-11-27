@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use ARI (Aurora Research Initiative) in your work, please cite this repository."
+title: "Aurora Research Initiative (ARI)"
+version: "1.0.0"
+date-released: "2025-11-27"
+authors:
+  - family-names: "Wright"
+    given-names: "Shawn"
+    orcid: "0009-0006-6043-9295"
+abstract: >
+  The Aurora Research Initiative (ARI) defines the epistemic, governance, and institutional
+  framework for the Aurora ecosystem, including the Aurora Workflow Orchestration (AWO),
+  CRI-CORE deterministic execution engine, and all governance-bound research processes.
+repository-code: "https://github.com/Waveframe-Labs/Aurora-Research-Initiative"
+license: "Apache-2.0"
+keywords:
+  - governance
+  - epistemics
+  - reproducibility
+  - methodology
+  - deterministic systems
