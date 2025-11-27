@@ -1,7 +1,7 @@
 ---
 title: "ARI Architecture Document"
 version: "1.0.0"
-status: "Draft — Institutional Architecture"
+status: "Final — Institutional Architecture"
 created: "2025-11-26"
 type: "architecture"
 ---
