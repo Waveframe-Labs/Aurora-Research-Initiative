@@ -3,7 +3,8 @@ title: "ARI Architecture Document"
 version: "1.0.0"
 status: "Final — Institutional Architecture"
 created: "2025-11-26"
-type: "architecture"
+type: "architecture"  
+doi: "10.5281/zenodo.17743096"  
 ---
 
 # Aurora Research Initiative — Architecture Document (v1.0.0)
