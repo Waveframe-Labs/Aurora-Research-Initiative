@@ -3,7 +3,8 @@ title: "Epistemic Doctrine"
 version: "1.0.0"
 status: "Final — Epistemic Foundation"
 created: "2025-11-26"
-type: "epistemics"
+type: "epistemics"  
+doi: "10.5281/zenodo.17743096"  
 ---
 
 # Aurora Research Initiative — Epistemic Doctrine (v1.0.0)
