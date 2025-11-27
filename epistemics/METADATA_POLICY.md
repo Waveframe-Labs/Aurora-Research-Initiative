@@ -1,7 +1,7 @@
 ---
 title: "Metadata Policy"
 version: "1.0.0"
-status: "Draft — Metadata Requirements"
+status: "Final — Metadata Requirements"
 created: "2025-11-26"
 type: "epistemics"
 ---
