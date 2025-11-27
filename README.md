@@ -158,7 +158,6 @@ with proper attribution.
 ---
 
 ## Citation  
-*(Replace DOI below after Zenodo minting)*  
 
 To cite ARI:
 
@@ -167,7 +166,7 @@ To cite ARI:
   title        = {Aurora Research Initiative (ARI)},
   author       = {Wright, Shawn C.},
   year         = {2025},
-  doi          = {10.5281/zenodo.UNKNOWN},
+  doi          = {10.5281/zenodo.17743097},  
   url          = {https://github.com/Waveframe-Labs/Aurora-Research-Initiative},
 }
 ```
@@ -177,7 +176,8 @@ Version: 1.0.0
 ```  
 Role: Institutional Governance Layer
 Scope: Full governance, epistemics, constraints, and constitutional structure
-Release: v1.0.0 (pending DOI minting)    
+Release: v1.0.0
+DOI: 10.5281/zenodo.17743097     
 ```  
 ## Identity & Contact
 
