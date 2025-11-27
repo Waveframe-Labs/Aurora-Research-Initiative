@@ -1,7 +1,7 @@
 ---
 title: "Governance Model"
 version: "1.0.0"
-status: "Draft — Role & Oversight Structure"
+status: "Final — Role & Oversight Structure"
 created: "2025-11-26"
 type: "governance"
 ---
