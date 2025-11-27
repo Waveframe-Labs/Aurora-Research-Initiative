@@ -178,9 +178,14 @@ Role: Institutional Governance Layer
 Scope: Full governance, epistemics, constraints, and constitutional structure
 Release: v1.0.0 (pending DOI minting)    
 ```  
-## Contact
+## Identity & Contact
 
-For collaboration or research inquiries:
-```  
-swright@waveframelabs.org
-```  
+**Organization:** Waveframe Labs  
+**Initiative:** Aurora Research Initiative (ARI)  
+**Primary Contact:** swright@waveframelabs.org  
+**ORCID:** https://orcid.org/0009-0006-6043-9295  
+**Repository:** https://github.com/Waveframe-Labs/Aurora-Research-Initiative  
+**Website:** https://waveframelabs.org  
+
+For questions about governance, epistemic standards, or the Aurora ecosystem,  
+contact the ARI Institutional Coordinator at the email above.
