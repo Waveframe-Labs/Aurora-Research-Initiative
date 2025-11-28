@@ -15,12 +15,17 @@ anchors:
   - "ARI-README-v1.0"
 ---
 
-# Aurora Research Initiative (ARI)  
+<p align="center">
+  <img src="figures/ARI_BANNER.png" width="650" alt="Aurora Research Initiative">
+</p>
+ 
 [![Waveframe Labs](https://img.shields.io/badge/WAVEFRAME%20LABS-Institutional%20Repository-FF6A00?style=flat)](https://waveframelabs.org)
 [![Governed Repository](https://img.shields.io/badge/Governance-ARI%20Compliant-8A2BE2?style=flat)](https://github.com/Waveframe-Labs/Aurora-Research-Initiative)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17743096.svg)](https://doi.org/10.5281/zenodo.17743096)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--6043--9295-A6CE39?logo=orcid&logoColor=white)](https://orcid.org/0009-0006-6043-9295)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)  
+
+# Aurora Research Initiative (ARI)  
 
 The **Aurora Research Initiative (ARI)** is the governance and epistemic foundation of the Aurora ecosystem.  
 ARI defines the institutional rules, constraints, doctrines, metadata models, and change-control structures that govern:
