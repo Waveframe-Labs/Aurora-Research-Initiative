@@ -1,11 +1,17 @@
 ---
 title: "Change Control and Versioning Policy"
-version: "1.0.0"
-status: "Final"
+version: "1.1.0"
+status: "Active"
 created: "2025-11-27"
-type: "governance"  
-doi: "10.5281/zenodo.17743096"  
-author: "ARI Institutional Coordinator"
+updated: "2025-12-12"
+type: "governance"
+author: "Waveframe Labs"
+maintainer: "Waveframe Labs"
+license: "Apache-2.0"
+doi: "10.5281/zenodo.17743096"
+ai_assisted: "partial"
+ai_assistance_details: "AI-assisted structural review and consistency checking under full human oversight and final approval."
+policy_version: "ARI-Metadata-2.0.0"
 dependencies:
   - "ARI_BOUNDARIES_AND_RESPONSIBILITIES.md"
   - "METHOD_CONSTRAINTS.md"
@@ -13,217 +19,228 @@ dependencies:
   - "ROLE_SEPARATION_CHARTER.md"
   - "EPISTEMIC_DOCTRINE.md"
 anchors:
-  - "ARI-CHANGE-CONTROL-v1.0"
+  - "ARI-CHANGE-CONTROL-v1.1"
 ---
 
-# Change Control and Versioning Policy (v1.0.0)
+# Change Control and Versioning Policy
 
-This document defines the **binding governance rules** for versioning, release control, and institutional change management across the Aurora Research Initiative (ARI), Aurora Workflow Orchestration (AWO), CRI-CORE, Waveframe Labs, and all Case Studies.  
-It establishes a **dual-versioning model** and mandates **global release tagging** for every version change, ensuring reproducibility, auditability, and long-term institutional stability.
+## Purpose
 
----
+This policy defines the **binding governance rules** for versioning, release control, and institutional
+change management across the Aurora Research Initiative (ARI), Aurora Workflow Orchestration (AWO),
+CRI-CORE, Waveframe Labs, and all affiliated case studies.
 
-# 1. Purpose
-
-The purpose of this policy is to:
-
-- prevent uncontrolled evolution of any subsystem  
-- enforce version discipline across all institutional layers  
-- define authoritative rules for version increments  
-- ensure every change is traceable and documented  
-- bind AWO and CRI evolution to ARI governance  
-- enable independent subsystem evolution without coupling  
-- maintain long-term reproducibility and provenance  
-
-This is a constitutional governance document and is binding for all contributors.
+It establishes a **dual versioning model** and mandates **global ecosystem release tagging** to ensure
+reproducibility, auditability, and long-term institutional stability.
 
 ---
 
-# 2. Dual Versioning Model
+## 1. Scope and Authority
 
-The Aurora ecosystem uses **independent versioning** for each subsystem, plus a **required global release tag** for every change.
+This policy is authoritative under ARI governance.
 
-## 2.1 Subsystem Versions
+All governed subsystems MUST comply with the rules defined herein. No subsystem may redefine,
+override, or bypass these requirements through local practice or tooling behavior.
+
+---
+
+## 2. Dual Versioning Model
+
+The Aurora ecosystem uses **independent semantic versioning per subsystem**, combined with a required
+**global ecosystem release tag**.
+
+### 2.1 Subsystem Versions
 
 Each subsystem maintains its own semantic version:
 
-- `ARI_VERSION`
-- `AWO_VERSION`
-- `CRI_VERSION`
-- `LABS_VERSION` (optional)
-- `CASE_STUDY_VERSION` (per project)
+- ARI
+- AWO
+- CRI-CORE
+- Waveframe Labs (optional, non-governance)
+- Case Studies (per project)
 
-Each follows MAJOR.MINOR.PATCH.
+All versions MUST follow `MAJOR.MINOR.PATCH` semantics.
 
-## 2.2 Global Ecosystem Release Tag (Required)
+---
 
-Every version change **must** produce a unified global tag in the format:
+### 2.2 Global Ecosystem Release Tag
+
+Every version change MUST produce a unified global release tag in the format:
 
 ```
 ARI-x.y.z_AWO-a.b.c_CRI-d.e.f_LABS-l.m.n_CSNAME-u.v.w
 ```
 
-This tag becomes the canonical provenance record for the entire ecosystem.
-
-The tag is required **regardless of which subsystem changed**.
-
----
-
-# 3. What Constitutes a Version Change
-
-## 3.1 ARI Version Changes
-Trigger MAJOR or MINOR bumps for:
-- governance doctrine changes  
-- constraint modifications  
-- metadata or provenance rules  
-- role definitions  
-- institutional policy updates  
-
-PATCH for clarifications only.
+The global tag is the **canonical provenance anchor** for the ecosystem state, regardless of which
+subsystem initiated the change.
 
 ---
 
-## 3.2 AWO Version Changes
-Trigger MAJOR or MINOR bumps for:
-- workflow logic changes  
-- structural modifications  
-- metadata extraction behavior  
-- reasoning chain architecture  
-- enforcement of new method rules  
+## 3. Version Change Triggers
 
-PATCH for documentation-only fixes.
+### 3.1 ARI Version Changes
 
----
+MAJOR or MINOR increments are required for:
+- Governance policy changes
+- Role definitions or authority boundaries
+- Metadata, provenance, or schema rules
+- Institutional constraints
 
-## 3.3 CRI Version Changes
-Trigger MAJOR or MINOR bumps for:
-- deterministic engine changes  
-- identity/attestation logic  
-- integrity validation behavior  
-- execution environment capture rules  
-
-PATCH for non-executable changes or comments.
+PATCH increments are permitted only for non-normative clarifications.
 
 ---
 
-## 3.4 Labs Version Changes
-Trigger for:
-- new demos  
-- engineering utilities  
-- non-governance infrastructure  
+### 3.2 AWO Version Changes
+
+MAJOR or MINOR increments are required for:
+- Workflow logic or structure changes
+- Reasoning-chain architecture modifications
+- Metadata handling behavior
+
+PATCH increments are permitted for documentation-only changes.
 
 ---
 
-## 3.5 Case Study Version Changes
-Each case study is versioned independently.
+### 3.3 CRI-CORE Version Changes
+
+MAJOR or MINOR increments are required for:
+- Deterministic execution logic
+- Identity, attestation, or integrity mechanisms
+- Execution environment capture
+
+PATCH increments are permitted for non-executable changes.
 
 ---
 
-# 4. Change Classes
+### 3.4 Waveframe Labs Version Changes
 
-## 4.1 Breaking Change
+Applied to:
+- Demonstrations
+- Infrastructure utilities
+- Non-governance tooling
+
+May not alter upstream subsystem versions.
+
+---
+
+### 3.5 Case Study Version Changes
+
+Each case study is versioned independently but MUST be included in the global release tag.
+
+---
+
+## 4. Change Classes
+
+### 4.1 Governance-Impacting Change
+
+A change is considered governance-impacting if it alters:
+- Metadata requirements
+- Role permissions or authority boundaries
+- Provenance or attestation guarantees
+- Enforcement scope defined by ARI
+
+Governance-impacting changes REQUIRE an ADR.
+
+---
+
+### 4.2 Breaking Change
+
 A change that:
-- invalidates prior assumptions  
-- alters subsystem guarantees  
-- impacts reproducibility or determinism  
-- modifies governance or subsystem contracts  
+- Invalidates prior assumptions
+- Alters subsystem guarantees
+- Impacts reproducibility or determinism
 
-Requires:  
-- MAJOR bump  
-- governance log entry  
-- IC approval  
-- new global release tag  
-
-## 4.2 Non-Breaking Change
-Adds new features without violating constraints.
-
-Requires:  
-- MINOR bump  
-- governance log entry  
-- new global release tag  
-
-## 4.3 Clarification Change
-Documentation-level updates with **no impact** on logic or execution.
-
-Requires:  
-- PATCH bump  
-- governance log entry  
-- new global release tag  
-
-## 4.4 Deprecated / Retired
-Subsystems, documents, or versions may be retired but must remain accessible.
-
-Requires:  
-- MAJOR or MINOR bump  
-- deprecation notice  
-- governance log entry  
+Requires:
+- MAJOR version increment
+- ADR (if governance-impacting)
+- Governance log entry
+- Global ecosystem release tag
 
 ---
 
-# 5. Approval Workflow
+### 4.3 Non-Breaking Change
 
-All version changes require:
+Adds functionality without violating existing constraints.
 
-1. **ARI Institutional Coordinator approval**  
-2. **Governance log entry**  
-3. **Provenance verification**  
-4. **Metadata normalization (if applicable)**  
-5. **Doc Guard pass**  
-6. **Creation of a Global Ecosystem Release Tag**  
+Requires:
+- MINOR version increment
+- Governance log entry
+- Global ecosystem release tag
+
+---
+
+### 4.4 Clarification Change
+
+Documentation-only changes with no behavioral impact.
+
+Requires:
+- PATCH version increment
+- Governance log entry
+- Global ecosystem release tag
+
+---
+
+### 4.5 Deprecation or Retirement
+
+Subsystems or artifacts may be deprecated but MUST remain accessible and traceable.
+
+Requires:
+- Version increment (MAJOR or MINOR as appropriate)
+- Deprecation notice
+- Governance log entry
+
+---
+
+## 5. Approval Requirements
+
+All version changes REQUIRE:
+
+1. Institutional Coordinator approval
+2. Architecture Decision Record (if governance-impacting)
+3. Governance log entry
+4. Provenance verification
+5. Metadata normalization
+6. Global ecosystem release tag creation
 
 No subsystem may approve its own version changes.
 
 ---
 
-# 6. Release Cycle Requirements
+## 6. Release Preconditions
 
-Before any release:
+Prior to release, the following MUST be satisfied:
 
-- metadata must be valid and normalized  
-- provenance must be verified  
-- deterministic execution must pass for CRI changes  
-- reasoning-chain auditability must pass for AWO changes  
-- integrity hashes must be regenerated  
-- changelogs must be updated  
-- no silent modifications permitted  
+- Metadata validity
+- Provenance verification
+- Deterministic execution validation (CRI-CORE changes)
+- Auditability validation (AWO changes)
+- Integrity hash regeneration
+- Changelog updates
 
-Releases are not allowed without complete compliance.
-
----
-
-# 7. Special Rules
-
-- ARI changes force **all** subsystems to re-anchor via a global release tag.  
-- AWO may not trigger ARI version changes.  
-- CRI may not alter AWO or ARI versioning.  
-- Labs changes cannot modify upstream subsystem versions.  
-- Case Studies may version themselves independently.  
-- No circular dependencies permitted.  
+Silent or partial releases are prohibited.
 
 ---
 
-# 8. Deprecation & Retirement Policy
+## 7. Cross-Layer Constraints
 
-Artifacts may be deprecated but must remain:
-
-- accessible  
-- reproducible  
-- traceable  
-- versioned  
-
-Retirement requires explicit governance documentation.
+- ARI changes require re-anchoring of all subsystems
+- AWO may not trigger ARI version changes
+- CRI-CORE may not alter ARI or AWO versioning rules
+- Case studies may not redefine governance constraints
+- Circular version dependencies are prohibited
 
 ---
 
-# 9. Revision Rules
+## 8. Amendments and Revision Rules
 
-All revisions require:
+Revisions to this policy REQUIRE:
 
-1. ARI IC approval  
-2. Governance log entry  
-3. Version increment  
-4. Backward linkage  
-5. Rationale included  
+1. Institutional Coordinator approval
+2. ADR documentation
+3. Governance log entry
+4. Semantic version increment
+5. Backward traceability preservation
 
-No silent revisions permitted.
+---
 
+This policy defines the authoritative change control and versioning rules of the Aurora ecosystem.
