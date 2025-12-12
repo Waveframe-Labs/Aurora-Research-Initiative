@@ -1,6 +1,6 @@
 ---
 title: "Role Separation Charter"
-version: "1.1.0"
+version: "1.1.1"
 status: "Active"
 created: "2025-11-27"
 updated: "2025-12-12"
@@ -18,7 +18,7 @@ dependencies:
   - "TOOLING_CONSTRAINTS.md"
   - "EPISTEMIC_DOCTRINE.md"
 anchors:
-  - "ARI-ROLE-SEPARATION-CHARTER-v1.1"
+  - "ARI-ROLE-SEPARATION-CHARTER-v1.1.1"
 ---
 
 # Role Separation Charter
@@ -46,11 +46,27 @@ This document is binding on all contributors and governed systems.
 
 ---
 
-## 2. Active Roles
+## 2. Role Assumption Protocol (Early-Stage Operation)
+
+During early institutional phases, a single entity or individual may temporarily hold multiple
+roles (e.g., ARI Institutional Coordinator, AWO Lead Maintainer, CRI-CORE Lead Maintainer).
+
+To preserve auditability and prevent implicit role bleeding:
+
+- **All governance-impacting actions MUST explicitly declare the role being exercised**
+- Role declaration MUST appear in governance logs, ADRs, and approval records
+- Example notation: `[ROLE: ARI-IC] Ratified governance change`
+- Decisions made under one role MUST NOT implicitly bind authority associated with another role
+
+This protocol operationalizes audit-first governance during single-operator or small-team phases.
+
+---
+
+## 3. Active Roles
 
 The following roles are **active** and hold authority today.
 
-### 2.1 ARI Institutional Coordinator (IC)
+### 3.1 ARI Institutional Coordinator (IC)
 
 **Scope:**
 - Highest governance authority
@@ -60,13 +76,13 @@ The following roles are **active** and hold authority today.
 - Ensures role-separation compliance
 
 **Prohibitions:**
-- May not act as Method or Tooling Maintainer
+- May not act as Method or Tooling Maintainer when exercising IC authority
 - May not approve undocumented changes
 - May not influence execution or workflow logic
 
 ---
 
-### 2.2 AWO Lead Maintainer
+### 3.2 AWO Lead Maintainer
 
 **Scope:**
 - Maintains methodological logic
@@ -81,7 +97,7 @@ The following roles are **active** and hold authority today.
 
 ---
 
-### 2.3 CRI-CORE Lead Maintainer
+### 3.3 CRI-CORE Lead Maintainer
 
 **Scope:**
 - Maintains deterministic execution engine
@@ -95,7 +111,7 @@ The following roles are **active** and hold authority today.
 
 ---
 
-### 2.4 Waveframe Labs Maintainer
+### 3.4 Waveframe Labs Maintainer
 
 **Scope:**
 - Develops engineering projects under ARI governance
@@ -108,7 +124,7 @@ The following roles are **active** and hold authority today.
 
 ---
 
-### 2.5 Case Study Maintainers
+### 3.5 Case Study Maintainers
 
 **Scope:**
 - Conduct applied research using AWO and CRI-CORE
@@ -121,29 +137,29 @@ The following roles are **active** and hold authority today.
 
 ---
 
-## 3. Reserved Future Roles
+## 4. Reserved Future Roles
 
 The following roles are **defined but inactive**. Their inclusion prevents future ambiguity and
 structural rewrites.
 
-### 3.1 ARI Governance Council (Future)
+### 4.1 ARI Governance Council (Future)
 Collective body for governance ratification and oversight.
 
-### 3.2 AWO Method Council (Future)
+### 4.2 AWO Method Council (Future)
 Advisory body for method evolution proposals.
 
-### 3.3 CRI Integrity Council (Future)
+### 4.3 CRI Integrity Council (Future)
 Oversight body for enforcement, attestation, and tooling integrity.
 
-### 3.4 Audit & Compliance Officer (Future)
+### 4.4 Audit & Compliance Officer (Future)
 Independent reviewer for governance and compliance adherence.
 
-### 3.5 External Reviewers (Future)
-Read-only observers of governance processes.
+### 4.5 External Reviewers (Future)
+Non-voting observers with advisory privileges.
 
 ---
 
-## 4. Separation of Powers
+## 5. Separation of Powers
 
 | Role | Permitted Modifications | Prohibited Modifications |
 |------|--------------------------|--------------------------|
@@ -154,20 +170,6 @@ Read-only observers of governance processes.
 | **Case Study Maintainers** | Applied research artifacts | Core system logic |
 
 These boundaries are binding.
-
----
-
-## 5. Forbidden Role Interactions
-
-The following actions constitute governance violations:
-
-- Self-approval of governance changes
-- Cross-role modification without authority
-- Silent or undocumented updates
-- Method enforcing governance
-- Enforcement defining method or doctrine
-- Case studies altering upstream systems
-- Governance engaging in execution
 
 ---
 
@@ -182,11 +184,26 @@ From highest to lowest:
 5. Waveframe Labs Maintainer
 6. Case Study Maintainers
 
-No lower role may override a higher one.
+This hierarchy is intentional: engineering implementation is subordinate to governance and method
+authority to preserve institutional integrity.
 
 ---
 
-## 7. Revisions
+## 7. Forbidden Role Interactions
+
+The following actions constitute governance violations:
+
+- Self-approval of governance changes
+- Cross-role modification without explicit authority
+- Silent or undocumented updates
+- Method enforcing governance
+- Enforcement defining method or doctrine
+- Case studies altering upstream systems
+- Governance engaging in execution
+
+---
+
+## 8. Revisions
 
 Revisions to this charter REQUIRE:
 
