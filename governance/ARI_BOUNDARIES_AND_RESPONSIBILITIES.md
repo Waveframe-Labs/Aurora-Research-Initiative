@@ -1,208 +1,210 @@
 ---
 title: "ARI Boundaries and Responsibilities"
-version: "1.0.0"
-status: "Final"
+version: "1.1.0"
+status: "Active"
 created: "2025-11-26"
-type: "governance"  
-doi: "10.5281/zenodo.17743096"  
-author: "ARI Institutional Coordinator"
+updated: "2025-12-12"
+type: "governance"
+author: "Waveframe Labs"
+maintainer: "Waveframe Labs"
+license: "Apache-2.0"
+doi: "10.5281/zenodo.17743096"
+ai_assisted: "partial"
+ai_assistance_details: "AI-assisted structural review and consistency checking under full human oversight and final approval."
+policy_version: "ARI-Metadata-2.0.0"
 dependencies:
   - "GOVERNANCE_MODEL.md"
-  - "EPISTEMIC_DOCTRINE.md"
+  - "Neurotransparency_Doctrine.md"
 anchors:
-  - "ARI-BOUNDARIES-v1.0"
+  - "ARI-BOUNDARIES-v1.1"
 ---
 
-# ARI Boundaries and Responsibilities (v1.0.0)
+# ARI Boundaries and Responsibilities
 
-This document formally defines the jurisdiction, responsibilities, and prohibitions governing  
-the interaction between ARI, AWO, CRI-CORE, Waveframe Labs, and all Case Studies.  
-It establishes the constitutional separation of powers required for long-term epistemic stability.
+## Purpose
 
----
+This document defines the **jurisdictional boundaries**, **responsibilities**, and **explicit
+prohibitions** governing interactions between ARI, AWO, CRI-CORE, Waveframe Labs, and all affiliated
+case studies.
 
-# 1. Purpose
-
-The purpose of this document is to:
-
-- prevent role bleeding between governance, method, engine, and applications  
-- mandate strict separation of authority  
-- ensure each subsystem operates within its allowed scope  
-- codify prohibitions that preserve epistemic integrity  
-- provide a binding reference during audits and future development
-
-This document is legally binding within the Aurora Research Initiative governance framework.
+Its purpose is to enforce separation of authority, prevent role bleeding, and provide a binding
+reference for audits, dispute resolution, and institutional evolution.
 
 ---
 
-# 2. ARI — Governance and Epistemic Authority
+## 1. ARI — Governance and Epistemic Authority
 
-## 2.1 Responsibilities
+### Responsibilities
+
 ARI is responsible for:
 
-- defining epistemic doctrine  
-- setting governance rules  
-- establishing metadata and provenance standards  
-- defining constraints for AWO and CRI  
-- approving structural changes to the ecosystem  
-- maintaining the institutional roadmap  
-- ensuring independence of validation  
+- Adopting and ratifying epistemic doctrine and compliance standards
+- Defining governance rules and authority boundaries
+- Establishing metadata, provenance, and identity requirements
+- Imposing constraints on AWO and CRI-CORE operation
+- Approving governance-impacting structural changes
+- Ensuring independence of validation and enforcement
 
-## 2.2 Explicit Prohibitions
+### Explicit Prohibitions
+
 ARI may **not**:
 
-- implement method logic  
-- implement deterministic execution  
-- interpret scientific data or claims  
-- build tooling or workflows  
-- execute research workflows  
-- validate its own changes (requires log + review)
+- Implement method logic or workflows
+- Implement deterministic execution or enforcement
+- Interpret scientific data or adjudicate scientific truth
+- Build or operate tooling
+- Execute research workflows
+- Self-ratify governance changes without logs and ADRs
 
 ARI governs.  
-ARI does not build.
+ARI does not build, execute, or enforce.
 
 ---
 
-# 3. AWO — Method and Workflow Framework
+## 2. AWO — Method and Workflow Framework
 
-## 3.1 Responsibilities
+### Responsibilities
+
 AWO is responsible for:
 
-- implementing ARI’s procedural doctrine  
-- providing workflow-based reproducibility  
-- orchestrating reasoning steps  
-- handling metadata extraction (temporary until CRI takes over)  
-- producing transparent, auditable processes  
+- Translating ARI and Neurotransparency requirements into procedural workflow logic
+- Orchestrating reasoning steps in a structured, auditable manner
+- Producing workflow artifacts subject to ARI legitimacy rules
+- Performing metadata handling until superseded by CRI-CORE
 
-## 3.2 Explicit Prohibitions
+### Explicit Prohibitions
+
 AWO may **not**:
 
-- create or modify epistemic rules  
-- approve its own governance changes  
-- interpret scientific correctness  
-- embed deterministic enforcement  
-- override provenance or metadata obligations  
-- perform attestation or identity-binding  
-- bypass ARI constraints  
+- Define or modify epistemic doctrine
+- Approve governance or policy changes
+- Interpret scientific correctness
+- Embed deterministic enforcement or identity binding
+- Override metadata or provenance obligations
+- Bypass ARI-imposed constraints
 
 AWO executes method.  
 AWO does not govern, enforce, or validate.
 
 ---
 
-# 4. CRI-CORE — Deterministic Execution and Enforcement Engine
+## 3. CRI-CORE — Deterministic Execution and Enforcement Engine
 
-## 4.1 Responsibilities
+### Responsibilities
+
 CRI-CORE is responsible for:
 
-- enforcing deterministic execution  
-- validating artifact integrity  
-- performing identity binding  
-- performing attestation independence checks  
-- running workflows without interpretation  
-- ensuring reproducible environmental capture  
+- Deterministic execution of workflows
+- Integrity validation and identity binding
+- Attestation independence checks
+- Reproducible environment capture
+- Execution without interpretive authority
 
-## 4.2 Explicit Prohibitions
+### Explicit Prohibitions
+
 CRI-CORE may **not**:
 
-- interpret scientific or logical meaning  
-- alter workflow logic  
-- embed epistemic or governance rules  
-- approve or reject research claims  
-- modify metadata definitions  
-- act as a reasoning engine  
-- perform any method-level decision making  
+- Interpret scientific or logical meaning
+- Alter workflow logic or method structure
+- Define epistemic or governance rules
+- Approve or reject scientific claims
+- Modify metadata definitions
+- Act as a reasoning or decision-making system
 
-CRI enforces.  
-CRI does not reason, decide, or govern.
+CRI-CORE enforces.  
+CRI-CORE does not reason, decide, or govern.
 
 ---
 
-# 5. Waveframe Labs — Engineering and Implementation
+## 4. Waveframe Labs — Engineering and Implementation
 
-## 5.1 Responsibilities
+### Responsibilities
+
 Waveframe Labs is responsible for:
 
-- developing tools, engines, methods, simulators, and demos  
-- implementing AWO and CRI under ARI governance  
-- maintaining repositories  
-- performing engineering tasks  
-- creating case studies and applied demonstrations  
+- Developing and maintaining tooling, methods, engines, simulators, and demonstrations
+- Implementing AWO and CRI-CORE under ARI governance
+- Maintaining repositories and infrastructure
+- Producing applied case studies
 
-## 5.2 Explicit Prohibitions
+### Explicit Prohibitions
+
 Waveframe Labs may **not**:
 
-- define epistemic rules  
-- override ARI governance  
-- modify ARI doctrine or metadata policy  
-- collapse method and engine into one subsystem  
-- execute or approve governance-level decisions  
+- Define or modify epistemic doctrine
+- Override ARI governance or policy
+- Alter metadata or provenance requirements
+- Collapse method and enforcement layers
+- Approve governance-level decisions
 
 Waveframe Labs builds under ARI authority.
 
 ---
 
-# 6. Case Studies — Applied Research
+## 5. Case Studies — Applied Research
 
-## 6.1 Responsibilities
-Case studies:
+### Responsibilities
 
-- apply AWO workflows  
-- run under CRI-CORE enforcement  
-- produce reproducible scientific artifacts  
-- demonstrate the validity of the Aurora ecosystem  
+Case studies are responsible for:
 
-## 6.2 Explicit Prohibitions
-Case Studies may **not**:
+- Applying AWO workflows
+- Operating under CRI-CORE enforcement
+- Producing reproducible, auditable scientific artifacts
+- Demonstrating the Aurora ecosystem in practice
 
-- alter any governance or epistemic rules  
-- modify method logic  
-- modify deterministic engine behavior  
-- bypass provenance or metadata obligations  
-- self-govern under any circumstances  
+### Explicit Prohibitions
+
+Case studies may **not**:
+
+- Modify governance or epistemic rules
+- Alter method logic or enforcement behavior
+- Bypass provenance or metadata requirements
+- Self-govern under any circumstances
 
 Case studies demonstrate.  
 They do not govern, interpret, or enforce.
 
 ---
 
-# 7. Interfaces and Permissions
+## 6. Interfaces and Permissions
 
-| Layer | Can Modify | Cannot Modify |
-|-------|------------|----------------|
-| **ARI** | governance, doctrine, constraints | method logic, CRI internals |
-| **AWO** | workflow code, method execution | governance, epistemics, CRI enforcement |
-| **CRI-CORE** | deterministic execution engine | workflow logic, epistemics, governance |
-| **Waveframe Labs** | tooling, demos | ARI doctrine, governance |
-| **Case Studies** | applied research | any core system |
-
----
-
-# 8. Forbidden Cross-Layer Interactions
-
-The following interactions are formally forbidden:
-
-- AWO interpreting or approving governance  
-- CRI implementing method logic  
-- Waveframe Labs modifying ARI doctrine  
-- Case studies altering any upstream subsystem  
-- ARI performing execution  
-- Any layer self-approving structural changes  
-- Any silent or undocumented modifications  
-- Any bypass of provenance or metadata policy  
-
-Violations represent governance failures.
+| Layer | Permitted Modifications | Prohibited Modifications |
+|------|--------------------------|--------------------------|
+| **ARI** | Governance, doctrine, constraints | Method logic, CRI internals |
+| **AWO** | Workflow logic | Governance, epistemics, enforcement |
+| **CRI-CORE** | Deterministic enforcement | Workflow logic, epistemics, governance |
+| **Waveframe Labs** | Tooling and demos | ARI doctrine, governance |
+| **Case Studies** | Applied research artifacts | Any upstream system |
 
 ---
 
-# 9. Revisions
+## 7. Forbidden Cross-Layer Interactions
 
-All revisions require:
+The following interactions are prohibited:
 
-1. Approval by the ARI Institutional Coordinator  
-2. Governance log entry  
-3. Version increment  
-4. Backward linkage  
-5. Rationale included in the log  
+- Method or tooling layers interpreting governance
+- Enforcement systems defining method or epistemics
+- Engineering layers modifying governance artifacts
+- Case studies altering upstream systems
+- Any layer self-approving structural changes
+- Any silent or undocumented modification
+- Any bypass of provenance or metadata policy
 
-No silent changes permitted.
+Violations constitute governance failures.
+
+---
+
+## 8. Revisions
+
+Revisions to this document REQUIRE:
+
+1. Institutional Coordinator approval
+2. Architecture Decision Record (if governance-impacting)
+3. Governance log entry
+4. Semantic version increment
+5. Backward traceability preservation
+
+---
+
+This document defines the authoritative jurisdictional boundaries and responsibilities of the Aurora
+Research Initiative.
