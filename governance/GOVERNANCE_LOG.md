@@ -66,7 +66,7 @@ These ADRs collectively:
 - codify the separation between governance authority and deterministic enforcement
 
 **Version State:**   
-- ARI_VERSION: 1.1.0 (unchanged)
+- ARI_VERSION: 2.0.0
 - Global Ecosystem Release Tag: Pending issuance
 
 **Rationale:**  
