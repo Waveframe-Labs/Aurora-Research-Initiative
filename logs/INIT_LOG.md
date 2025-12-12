@@ -1,28 +1,36 @@
 ---
 title: "ARI Initialization Log"
-version: "1.0.0"
-status: "Active — Append-Only"
+version: "1.1.0"
+status: "Active"
 created: "2025-11-26"
-type: "log"  
-doi: "10.5281/zenodo.17743096"  
+updated: "2025-12-12"
+type: "log"
+doi: "10.5281/zenodo.17743096"
+author: "Waveframe Labs"
+maintainer: "Waveframe Labs"
+license: "Apache-2.0"
+ai_assisted: "partial"
+ai_assistance_details: "AI-assisted metadata normalization and consistency review under human oversight."
+policy_version: "ARI-Metadata-2.0.0"
+anchors:
+  - "ARI-INIT-LOG-v1.1"
 ---
 
 # Aurora Research Initiative — Initialization Log (INIT_LOG.md)
 
 This document records the initialization and foundational events of the
-**Aurora Research Initiative (ARI)**. All entries in this file are **append-only** and represent
-the authoritative provenance chain for ARI’s institutional development.
+**Aurora Research Initiative (ARI)**. All entries in this file are **append-only**
+and represent the authoritative provenance chain for ARI’s institutional development.
 
 ---
 
 ## Entry 0001 — Establishment of ARI Repository
 **Date:** 2025-11-26  
-**Recorded by:** Institutional Coordinator (Shawn C. Wright)
+**Recorded by:** Institutional Coordinator (Waveframe Labs)
 
 **Summary:**  
 The Aurora Research Initiative repository was created to serve as the institutional governance layer
-for the Aurora Workflow Orchestration ecosystem (AWO, CRI-CORE, and affiliated scientific case
-studies).
+for the Aurora Workflow Orchestration ecosystem (AWO, CRI-CORE, and affiliated scientific case studies).
 
 **Documents established at initialization:**
 - `README.md`  
@@ -45,7 +53,7 @@ future governance, epistemic, and architectural expansion.
 
 ## Entry 0002 — Activation of Governance Structure
 **Date:** 2025-11-26  
-**Recorded by:** Institutional Coordinator
+**Recorded by:** Institutional Coordinator (Waveframe Labs)
 
 **Summary:**  
 Initial governance roles and responsibilities were defined within `GOVERNANCE_MODEL.md`. This
@@ -57,7 +65,7 @@ establishes the first version of:
 - logging requirements  
 
 **Rationale:**  
-Clear governance rules are necessary before AWO v4.2 stabilization, CRI-CORE implementation, or case
+Clear governance rules are necessary before AWO stabilization, CRI-CORE implementation, or case
 study integration.
 
 **Impact:**  
@@ -68,19 +76,19 @@ logged according to this model.
 
 ## Entry 0003 — Architecture Definition
 **Date:** 2025-11-26  
-**Recorded by:** Institutional Coordinator
+**Recorded by:** Institutional Coordinator (Waveframe Labs)
 
 **Summary:**  
 The `ARI_ARCHITECTURE.md` document was created defining ARI’s hierarchical position, interfaces with
 AWO and CRI-CORE, and its institutional responsibilities.
 
 **Rationale:**  
-A clear architectural understanding is required before metadata policies, epistemic doctrine, or
+A clear architectural understanding is required before metadata policy, epistemic doctrine, or
 roadmap development can proceed.
 
 **Impact:**  
-The architecture baseline is formally established, enabling the next-phase development of epistemic,
-metadata, and governance expansion.
+The architecture baseline is formally established, enabling next-phase development of governance,
+epistemic standards, and enforcement tooling.
 
 ---
 
