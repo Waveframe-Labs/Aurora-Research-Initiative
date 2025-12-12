@@ -1,34 +1,28 @@
 ---
 title: "Tooling Constraints"
-version: "1.1.0"
+version: "1.1.1"
 status: "Active"
 created: "2025-11-27"
 updated: "2025-12-12"
 type: "governance"
+doi: "10.5281/zenodo.17743096"
 author: "Waveframe Labs"
 maintainer: "Waveframe Labs"
 license: "Apache-2.0"
-doi: "10.5281/zenodo.17743096"
 ai_assisted: "partial"
-ai_assistance_details: "AI-assisted structural review and consistency checking under full human oversight and final approval."
+ai_assistance_details: "AI-assisted structural review and risk analysis under full human oversight."
 policy_version: "ARI-Metadata-2.0.0"
 dependencies:
   - "ARI_BOUNDARIES_AND_RESPONSIBILITIES.md"
   - "EPISTEMIC_DOCTRINE.md"
   - "METADATA_POLICY.md"
 anchors:
-  - "ARI-TOOLING-CONSTRAINTS-v1.1.0"
+  - "ARI-TOOLING-CONSTRAINTS-v1.1.1"
 ---
 
-# Tooling Constraints
+# Tooling Constraints (v1.1.1)
 
-This document defines the **binding constraints and required capabilities** governing the CRI-CORE
-tooling layer. It specifies what CRI-CORE **must do**, **may do**, and **must not do** under the
-authority of the Aurora Research Initiative (ARI).
-
-CRI-CORE is the deterministic enforcement and execution engine of the Aurora ecosystem. Its role is
-strictly mechanical: enforcing integrity, provenance, and determinism **without interpretive or
-epistemic authority**.
+This document establishes the binding constitutional constraints governing the CRI-CORE tooling layer. It defines the legal, epistemic, and operational boundaries under which CRI-CORE must function. These constraints ensure that CRI-CORE remains a purely mechanistic execution and enforcement engine with no authority to interpret, infer, or influence epistemic or methodological logic.
 
 ---
 
@@ -36,11 +30,11 @@ epistemic authority**.
 
 The purpose of this document is to:
 
-- Define strict limitations on CRI-CORE authority
-- Ensure CRI-CORE performs only mechanical, deterministic enforcement
-- Prevent semantic, epistemic, or methodological interpretation
-- Guarantee independence from AWO and ARI decision-making
-- Provide enforceable guardrails for all future tooling development
+- define the strict limitations of CRI-CORE
+- ensure CRI-CORE performs only mechanical, deterministic enforcement
+- prevent semantic or epistemic influence from tooling
+- guarantee reproducibility within declared technical limits
+- provide enforceable guardrails for all future CRI development
 
 This document is binding for all implementations and versions of CRI-CORE.
 
@@ -48,183 +42,111 @@ This document is binding for all implementations and versions of CRI-CORE.
 
 ## 2. Required Capabilities of CRI-CORE
 
-### 2.1 Deterministic Execution
+### 2.1 Deterministic Execution (Declared Scope)
 
-CRI-CORE MUST:
+CRI-CORE must:
 
-- Execute workflows deterministically
-- Eliminate nondeterministic behavior where possible
-- Produce reproducible outputs given identical inputs and environments
-- Enforce consistency across execution environments
+- enforce **deterministic intent**, not universal bitwise determinism
+- ensure *semantic determinism* where bitwise determinism is technically infeasible
+- document and pin execution environments, libraries, and hardware targets
+- declare known nondeterministic domains (e.g., GPU floating-point operations)
 
-Determinism is an enforcement guarantee, not a methodological choice.
+**Definition:**  
+*Semantic determinism* means that repeated executions produce functionally equivalent results within documented tolerance bounds, even if low-level floating-point representations differ.
+
+Bitwise determinism MAY be required only where explicitly declared by a case study or method contract.
 
 ---
 
 ### 2.2 Identity and Attestation Enforcement
 
-CRI-CORE MUST:
+CRI-CORE must:
 
-- Perform identity binding for execution contexts
-- Enforce attestation independence
-- Prevent actors from approving their own changes
-- Validate signatures, checksums, or attestations required by ARI
-
----
-
-### 2.3 Integrity and Provenance Validation
-
-CRI-CORE MUST:
-
-- Compute and validate cryptographic integrity hashes
-- Detect tampering or unapproved modifications
-- **Halt execution immediately** when integrity or provenance validation fails
-- Ensure artifacts remain unaltered across executions
-
-CRI-CORE has veto authority only in the form of execution halting on validation failure.
+- perform identity-binding for execution contexts
+- enforce attestation independence
+- ensure no actor approves their own changes
+- validate cryptographic signatures and checksums as required
 
 ---
 
-### 2.4 Metadata Enforcement and Equivalence
+### 2.3 Integrity Validation
 
-CRI-CORE MUST:
+CRI-CORE must:
 
-- Validate presence and schema compliance of metadata produced by AWO
-- Enforce metadata completeness prior to artifact acceptance
-- Verify metadata equivalence across derived artifacts (e.g., Markdown → PDF)
-- Inject or map metadata into derived artifacts when required to preserve equivalence
+- compute and validate cryptographic integrity hashes
+- detect unauthorized modification of artifacts or logs
+- **halt execution immediately** upon integrity failure
+- distinguish between declared nondeterminism and tampering
 
-CRI-CORE MUST NOT generate, infer, or correct metadata content. It enforces compliance, not authorship.
+Integrity checks MUST respect the determinism scope defined in Section 2.1.
 
 ---
 
-### 2.5 Execution Environment Capture
+### 2.4 Execution Environment Capture
 
-CRI-CORE MUST:
+CRI-CORE must:
 
-- Capture execution environment details deterministically
-- Record runtime conditions as provenance metadata
-- Expose environment records for audit and reconstruction
-- Avoid reliance on implicit or untracked environmental state
+- capture runtime environment details deterministically
+- record versions of compilers, libraries, hardware, and drivers
+- expose environment records for audit and replay
+- avoid implicit or untracked environmental dependencies
+
+---
+
+### 2.5 Metadata Transport and Injection
+
+CRI-CORE must:
+
+- transport metadata from governed sources into derived artifacts
+- inject metadata *verbatim* into outputs (e.g., PDFs, archives)
+- preserve field values exactly as provided
+- validate metadata equivalence across representations
+
+CRI-CORE must **not**:
+
+- generate missing metadata
+- infer metadata values
+- correct or synthesize metadata fields
+
+Injection is strictly a **transport operation**, not a creative or interpretive act.
 
 ---
 
 ## 3. Explicit Prohibitions
 
-### 3.1 Epistemic Prohibitions
+CRI-CORE is explicitly forbidden from:
 
-CRI-CORE MUST NOT:
+- interpreting scientific or logical meaning
+- evaluating correctness beyond integrity checks
+- inferring workflow intent or structure
+- modifying method logic
+- altering metadata content
+- resolving epistemic ambiguity
+- making discretionary decisions
 
-- Interpret workflow meaning or intent
-- Evaluate scientific or logical correctness
-- Perform reasoning or inference of any kind
-
-CRI-CORE is not an epistemic actor.
-
----
-
-### 3.2 Method Prohibitions
-
-CRI-CORE MUST NOT:
-
-- Implement or modify method logic
-- Validate methodological correctness
-- Embed procedural reasoning
-- Override logic defined by AWO
-
-CRI enforces execution; it does not define method.
-
----
-
-### 3.3 Structural Prohibitions
-
-CRI-CORE MUST NOT:
-
-- Analyze or infer workflow structure beyond required validation
-- Detect or correct logical errors
-- Conditionally alter execution paths
-- Modify workflow structure at runtime
-
----
-
-### 3.4 Governance Prohibitions
-
-CRI-CORE MUST NOT:
-
-- Modify ARI governance artifacts
-- Approve governance or policy changes
-- Override ARI or AWO constraints
-- Assume any governance authority
-
----
-
-### 3.5 Provenance Prohibitions
-
-CRI-CORE MUST NOT:
-
-- Generate metadata content
-- Infer missing metadata
-- Correct metadata violations
-- Silence or bypass validation failures
+CRI-CORE enforces constraints; it does not reason.
 
 ---
 
 ## 4. Cross-Layer Boundaries
 
-### 4.1 CRI-CORE → ARI
+CRI-CORE:
 
-CRI-CORE MUST operate under ARI governance authority.
-CRI-CORE MUST NOT reinterpret, modify, or influence governance rules.
-
----
-
-### 4.2 CRI-CORE → AWO
-
-CRI-CORE MUST execute workflows mechanically as provided by AWO.
-CRI-CORE MUST NOT question, refine, or reinterpret workflow instructions.
+- obeys ARI governance without reinterpretation
+- executes AWO instructions mechanically
+- may halt execution on validation failure
+- may not override, refine, or reinterpret upstream logic
 
 ---
 
-### 4.3 CRI-CORE → Waveframe Labs
+## 5. Revision Rules
 
-Waveframe Labs MAY implement CRI-CORE, but MAY NOT grant CRI-CORE interpretive,
-methodological, or governance authority beyond this document.
+All revisions require:
 
----
+1. ARI Institutional approval
+2. Governance log entry
+3. Semantic version increment
+4. Backward linkage
+5. Documented rationale
 
-### 4.4 CRI-CORE → Case Studies
-
-Case studies MAY execute workflows via CRI-CORE.
-They MUST NOT extend or modify CRI-CORE behavior.
-
----
-
-## 5. Forbidden Cross-Layer Interactions
-
-The following actions constitute governance failures:
-
-- Tooling interpreting workflow semantics
-- Tooling inferring structure or intent
-- Tooling evaluating correctness or truth
-- Tooling generating or correcting metadata
-- Tooling bypassing validation failures
-- Tooling modifying workflow structure
-- Tooling making autonomous decisions
-
-These prohibitions preserve CRI-CORE neutrality.
-
----
-
-## 6. Revisions
-
-Revisions to this document REQUIRE:
-
-1. Institutional Coordinator approval
-2. Architecture Decision Record (if governance-impacting)
-3. Governance log entry
-4. Semantic version increment
-5. Backward traceability preservation
-
----
-
-This document defines the authoritative tooling constraints governing CRI-CORE.
+No silent modifications permitted.
