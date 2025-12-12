@@ -1,226 +1,199 @@
 ---
 title: "ARI Architecture Document"
-version: "1.0.0"
-status: "Final — Institutional Architecture"
+version: "1.1.0"
+status: "Active"
+type: "architecture"
 created: "2025-11-26"
-type: "architecture"  
-doi: "10.5281/zenodo.17743096"  
+updated: "2025-12-13"
+author: "Waveframe Labs"
+maintainer: "Waveframe Labs"
+license: "Apache-2.0"
+doi: "10.5281/zenodo.17743096"
+ai_assisted: "partial"
+ai_assistance_details: "AI-assisted structural review and consistency checking under full human oversight and final approval."
+policy_version: "ARI-Metadata-2.0.0"
 ---
 
-# Aurora Research Initiative — Architecture Document (v1.0.0)
+# Aurora Research Initiative (ARI) — Architecture Document
 
-The **Aurora Research Initiative (ARI)** serves as the institutional, governance, and epistemic
-foundation for the Aurora Workflow Orchestration ecosystem. This document defines ARI’s structure,
-scope, responsibilities, authorities, and interaction boundaries with AWO, CRI-CORE, and scientific
-case studies.
+## Purpose
 
-ARI exists to prevent governance drift, ensure institutional clarity, and provide a stable foundation
-for reproducible AI-human scientific workflows.
+The **Aurora Research Initiative (ARI)** defines the **institutional, governance, and epistemic architecture** that governs all research, methodology, tooling, and artifacts produced under the Waveframe Labs ecosystem.
+
+ARI exists to prevent governance drift, **define epistemic integrity requirements**, and provide a stable, auditable institutional foundation for reproducible AI–human scientific workflows.
+
+This document specifies **what ARI is, what it governs, and what it explicitly does not do**.
 
 ---
 
-# 1. Institutional Positioning
+## 1. Position in the Aurora Hierarchy
 
-ARI is positioned as the **organizational layer above all workflows and tooling**:
+ARI occupies **Layer 1 — Institutional Authority** in the Aurora hierarchy.
+
 ```
-Waveframe Labs (organization)
-└── Aurora Research Initiative (institutional governance)
-├── AWO — Method & execution workflow
-├── CRI-CORE — Deterministic tooling engine (in development)
-└── Scientific Case Studies
-├── Waveframe v4.0 (cosmology)
-└── Societal Progress Simulator
+Layer 0A — Neurotransparency Doctrine
+│   Philosophical justification (why cognitive integrity is required)
+│
+Layer 0B — Neurotransparency Specification (NTS)
+│   Normative compliance standard (what is required)
+│
+Layer 1 — Aurora Research Initiative (ARI)
+│   Institutional authority (adopts NTS, governs scope and legitimacy)
+│
+Layer 2 — Aurora Workflow Orchestration (AWO)
+│   Method specification (how compliant workflows are structured)
+│
+Layer 3 — CRI-CORE
+│   Enforcement engine (validators, provenance capture, tamper resistance)
+│
+Layer 4 — Case Studies
+│   Applied research demonstrating the full stack
+│
+Layer 5 — Tools & Infrastructure
+│   Supporting systems (Forge, Stamp, pipelines, publishing integrations)
 ```
 
-ARI governs **principles, oversight, identity, provenance, epistemic norms, and decision-making**.
-It does *not* execute workflows or implement tooling.
+**Authority flows downward.**  
+No lower layer may redefine or override constraints imposed by a higher layer.
 
 ---
 
-# 2. Scope of ARI Governance
+## 2. Institutional Role of ARI
 
-ARI defines and enforces the following areas:
+ARI functions as the **legislative and ratifying authority** of the Aurora ecosystem.
 
-### 2.1 Epistemic Norms
-- audit-first reasoning  
-- falsifiability requirements  
-- metadata completeness  
-- provenancing rules  
-- transparency and interpretability standards  
+ARI:
 
-### 2.2 Governance Structure
-- role separation  
-- approval boundaries  
-- oversight responsibilities  
-- independence of workflow execution  
+- Adopts the Neurotransparency Specification (NTS) as binding
+- Defines institutional scope, boundaries, and legitimacy
+- Establishes governance constraints and role separation
+- Determines what constitutes a valid institutional artifact
+- Authorizes methods and enforcement engines to operate
 
-### 2.3 Identity & Integrity Anchoring
-- identity rules  
-- attestation independence principles  
-- repository identity controls  
-- reproducibility guarantees  
-
-### 2.4 Documentation & Metadata Standards
-- metadata block requirements  
-- artifact traceability  
-- documentation versioning  
-- diagram and schema rules  
-
-### 2.5 Lifecycle Policies
-- evolution of AWO  
-- transition to CRI-CORE  
-- integration of case studies  
-- deprecation and archival behaviors  
+ARI **does not implement, execute, or automate** any workflows.
 
 ---
 
-# 3. ARI is *Not*
+## 3. Scope of ARI Governance
 
-To maintain institutional clarity:
+ARI governs the following domains:
 
-ARI is **not**:
-- a workflow  
-- a codebase  
-- an execution engine  
-- a model  
-- an experiment  
-- a scientific domain framework  
-- a personal blog  
-- a philosophical essay collection  
+### 3.1 Epistemic Governance
+
+- Institutional adoption and ratification of epistemic requirements defined in the Neurotransparency Specification (NTS), including auditability, falsifiability, and cognitive traceability
+- Determination of institutional consequences for epistemic non-compliance
+
+### 3.2 Institutional Governance
+
+- Role separation and independence
+- Approval and escalation boundaries
+- Change control and governance-level versioning authority
+
+### 3.3 Identity and Integrity
+
+- Artifact identity rules
+- Attestation independence
+- Repository-level legitimacy conditions
+
+### 3.4 Metadata and Documentation Standards
+
+- Governance-level metadata requirements
+- Documentation structure expectations
+- Versioning semantics
+- Formal adoption of the ARI Metadata Schema
+
+### 3.5 Lifecycle and Evolution
+
+- Adoption and deprecation of methods
+- Governance oversight of enforcement transitions
+- Long-term institutional continuity management
+
+---
+
+## 4. What ARI Is Not
+
+To preserve institutional clarity, ARI is **not**:
+
+- A workflow
+- A codebase
+- An execution engine
+- A toolchain
+- A scientific model
+- An experiment
+- A domain-specific research framework
 
 ARI **does not**:
-- run workflows  
-- validate commits  
-- provide runtime logic  
-- generate artifacts  
-- execute scientific simulations  
 
-ARI **exists solely** to provide the rules, philosophy, and governance around these activities.
+- Execute workflows
+- Run validators
+- Generate research artifacts
+- Enforce rules mechanically
 
----
-
-# 4. Architectural Components
-
-ARI consists of five primary components:
-
-### 4.1 Governance Model
-Defines the rules, roles, separation of concerns, and approval logic that govern the initiative.
-
-### 4.2 Epistemic Doctrine
-Establishes ARI’s scientific philosophy:
-- audit-first epistemology  
-- reproducibility as identity  
-- falsifiability as mandatory  
-- deterministic provenance  
-
-### 4.3 Institutional Interfaces
-How ARI integrates with:
-- AWO (method)
-- CRI-CORE (tooling)
-- Case studies (research)
-
-### 4.4 Metadata & Provenance Framework
-Defines:
-- metadata blocks  
-- documentation structure  
-- artifact identity rules  
-- versioning and logging processes  
-
-### 4.5 Evolution & Roadmap
-Outlines:
-- transition from AWO dominance to CRI-CORE tooling  
-- stability criteria  
-- ecosystem expansion  
-- long-term governance structure  
+ARI defines **what is allowed** — not **how it is executed**.
 
 ---
 
-# 5. Interaction Boundaries
+## 5. Interfaces with Other Layers
 
-### 5.1 With AWO (Method)
+### 5.1 ARI ↔ Neurotransparency Specification (NTS)
+
+- ARI formally adopts NTS as the governing compliance standard
+- NTS defines mandatory conditions for reasoning influence and artifact validity
+- ARI determines institutional legitimacy and consequences of non-compliance
+
+### 5.2 ARI ↔ AWO (Method)
+
 ARI:
-- defines governance  
-- enforces epistemic standards  
-- sets metadata requirements  
-- dictates role separation rules  
+- Defines governance and epistemic constraints
+- Specifies required metadata and role separation at the institutional level
 
 AWO:
-- implements workflows  
-- enforces determinism (temporary)  
-- conducts scientific execution  
+- Translates ARI and NTS requirements into structured workflow logic
+- Produces artifacts subject to ARI legitimacy rules
 
-### 5.2 With CRI-CORE (Tooling)
+### 5.3 ARI ↔ CRI-CORE (Enforcement)
+
 ARI:
-- sets expectations for determinism  
-- defines provenance criteria  
-- governs versioning norms  
+- Defines enforcement boundaries and constraints
+- Governs the scope and authority of enforcement systems
 
 CRI-CORE:
-- implements deterministic execution logic  
-- enforces identity binding  
-- provides the reproducibility engine  
+- Implements deterministic enforcement mechanisms
+- Captures provenance and tamper-resistant logs
+- Executes validators without governance or policy authority
 
-### 5.3 With Scientific Case Studies
+### 5.4 ARI ↔ Case Studies
+
 ARI:
-- provides epistemic rules  
-- ensures falsifiability and auditability  
-- defines metadata structure  
+- Defines legitimacy conditions for institutional recognition of research claims
 
 Case studies:
-- apply the standards  
-- generate research artifacts  
-- produce domain-specific results  
+- Demonstrate compliance in practice
+- Produce domain-specific scientific results
 
 ---
 
-# 6. Stability & Maturity Phases
+## 6. Amendments and Change Control
 
-ARI evolves in distinct phases:
+All architectural changes MUST:
 
-### Phase 1: Foundational Architecture  
-(You are here)
-- establish governance  
-- create initial documents  
-- define structure  
+1. Comply with the Metadata Policy v2.0.0
+2. Be versioned according to semantic governance rules
+3. Be documented via an Architecture Decision Record (ADR)
+4. Be logged in `governance/GOVERNANCE_LOG.md`
+5. Preserve backward traceability
 
-### Phase 2: Integration with AWO  
-- enforce metadata rules  
-- define governance boundaries  
-- link ARI artifacts to AWO provenance  
-
-### Phase 3: CRI-CORE Onboarding  
-- transition enforcement from AWO to CRI  
-- formalize deterministic runner requirements  
-
-### Phase 4: Institutional Maturity  
-- public documentation  
-- licensing decisions  
-- stability audits  
-- reproducibility certification  
+Silent or retroactive architectural changes are prohibited.
 
 ---
 
-# 7. Revisions & Amendments
+## 7. Institutional Identity
 
-All architectural changes must:
-1. be logged in `logs/GOV_LOG.md`  
-2. include version increments  
-3. maintain backward linkage  
-4. be approved through ARI governance rules  
-
-No architectural changes may be made silently.
+**Maintainer:** Waveframe Labs  
+**Principal Investigator:** Shawn C. Wright  
+**ORCID:** 0009-0006-6043-9295  
+**Contact:** swright@waveframelabs.org  
 
 ---
 
-# 8. Contact & Identity
-
-Principal Investigator: Shawn C. Wright  
-Affiliation: Waveframe Labs  
-ORCID: 0009-0006-6043-9295  
-Email: swright@waveframelabs.org  
-
----
-
-This document establishes the initial institutional architecture of ARI.
-Future versions will add diagrams, decision logic, metadata schemas, and governance rules.
-
+This document defines the authoritative institutional architecture of the Aurora Research Initiative.
