@@ -137,6 +137,7 @@ The following fields are OPTIONAL unless required by a repo-level policy:
 - `dependencies`
 - `anchors`
 - `policy_version` (recommended for policies)
+- `doi` (recommended for published or archived artifacts)  
 
 Optional fields MUST NOT conflict with required fields and MUST be valid YAML.
 
