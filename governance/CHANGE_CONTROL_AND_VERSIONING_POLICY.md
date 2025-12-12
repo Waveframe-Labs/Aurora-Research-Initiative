@@ -1,6 +1,6 @@
 ---
 title: "Change Control and Versioning Policy"
-version: "1.1.0"
+version: "1.1.1"
 status: "Active"
 created: "2025-11-27"
 updated: "2025-12-12"
@@ -17,9 +17,9 @@ dependencies:
   - "METHOD_CONSTRAINTS.md"
   - "TOOLING_CONSTRAINTS.md"
   - "ROLE_SEPARATION_CHARTER.md"
-  - "EPISTEMIC_DOCTRINE.md"
+  - "Neurotransparency_Doctrine.md"
 anchors:
-  - "ARI-CHANGE-CONTROL-v1.1"
+  - "ARI-CHANGE-CONTROL-v1.1.1"
 ---
 
 # Change Control and Versioning Policy
@@ -31,7 +31,8 @@ change management across the Aurora Research Initiative (ARI), Aurora Workflow O
 CRI-CORE, Waveframe Labs, and all affiliated case studies.
 
 It establishes a **dual versioning model** and mandates **global ecosystem release tagging** to ensure
-reproducibility, auditability, and long-term institutional stability.
+reproducibility, auditability, and long-term institutional stability, while preserving scalability
+and minimizing unnecessary release noise.
 
 ---
 
@@ -47,7 +48,7 @@ override, or bypass these requirements through local practice or tooling behavio
 ## 2. Dual Versioning Model
 
 The Aurora ecosystem uses **independent semantic versioning per subsystem**, combined with a required
-**global ecosystem release tag**.
+**global ecosystem release tag** for qualifying releases.
 
 ### 2.1 Subsystem Versions
 
@@ -63,16 +64,23 @@ All versions MUST follow `MAJOR.MINOR.PATCH` semantics.
 
 ---
 
-### 2.2 Global Ecosystem Release Tag
+### 2.2 Global Ecosystem Release Tag (Scoped)
 
-Every version change MUST produce a unified global release tag in the format:
+Every **qualifying release** MUST produce a unified global release tag in the format:
 
 ```
 ARI-x.y.z_AWO-a.b.c_CRI-d.e.f_LABS-l.m.n_CSNAME-u.v.w
 ```
 
-The global tag is the **canonical provenance anchor** for the ecosystem state, regardless of which
-subsystem initiated the change.
+The global tag applies to:
+- the **core ecosystem** (ARI, AWO, CRI-CORE, optional Labs), and
+- **at most one case study**, corresponding to the release context.
+
+Case studies not included in the tag are considered out of scope for that release and are tracked
+via their own independent versions and logs.
+
+The global tag is the **canonical provenance anchor** for the ecosystem state represented by the
+release.
 
 ---
 
@@ -97,7 +105,8 @@ MAJOR or MINOR increments are required for:
 - Reasoning-chain architecture modifications
 - Metadata handling behavior
 
-PATCH increments are permitted for documentation-only changes.
+PATCH increments are permitted for documentation corrections and non-functional bug fixes that do not
+alter the reasoning chain structure or governance guarantees.
 
 ---
 
@@ -125,7 +134,8 @@ May not alter upstream subsystem versions.
 
 ### 3.5 Case Study Version Changes
 
-Each case study is versioned independently but MUST be included in the global release tag.
+Each case study is versioned independently. Case study versions are included in the global ecosystem
+release tag only when explicitly in scope for that release.
 
 ---
 
@@ -171,12 +181,14 @@ Requires:
 
 ### 4.4 Clarification Change
 
-Documentation-only changes with no behavioral impact.
+Documentation-only changes and non-functional corrections with no behavioral impact.
 
 Requires:
 - PATCH version increment
 - Governance log entry
-- Global ecosystem release tag
+
+Clarification changes do **not** require a new global ecosystem release tag unless they are
+governance-impacting or explicitly bundled into a milestone release.
 
 ---
 
@@ -200,7 +212,8 @@ All version changes REQUIRE:
 3. Governance log entry
 4. Provenance verification
 5. Metadata normalization
-6. Global ecosystem release tag creation
+
+Global ecosystem release tags are required only for qualifying releases as defined above.
 
 No subsystem may approve its own version changes.
 
@@ -208,7 +221,7 @@ No subsystem may approve its own version changes.
 
 ## 6. Release Preconditions
 
-Prior to release, the following MUST be satisfied:
+Prior to any qualifying release, the following MUST be satisfied:
 
 - Metadata validity
 - Provenance verification
@@ -223,11 +236,14 @@ Silent or partial releases are prohibited.
 
 ## 7. Cross-Layer Constraints
 
-- ARI changes require re-anchoring of all subsystems
+- ARI changes require re-anchoring of all subsystems at the next qualifying release
 - AWO may not trigger ARI version changes
 - CRI-CORE may not alter ARI or AWO versioning rules
 - Case studies may not redefine governance constraints
 - Circular version dependencies are prohibited
+
+Re-anchoring requirements apply to **release actions**, not to internal synchronization steps, to
+avoid recursive versioning loops.
 
 ---
 
