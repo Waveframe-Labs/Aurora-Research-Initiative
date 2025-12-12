@@ -1,6 +1,6 @@
 ---
 title: "Method Constraints"
-version: "1.1.0"
+version: "1.1.1"
 status: "Active"
 created: "2025-11-27"
 updated: "2025-12-12"
@@ -17,7 +17,7 @@ dependencies:
   - "EPISTEMIC_DOCTRINE.md"
   - "METADATA_POLICY.md"
 anchors:
-  - "ARI-METHOD-CONSTRAINTS-v1.1.0"
+  - "ARI-METHOD-CONSTRAINTS-v1.1.1"
 ---
 
 # Method Constraints
@@ -26,8 +26,8 @@ This document defines the **binding constraints and required capabilities** gove
 Workflow Orchestration (AWO) framework. It specifies what AWO **must do**, **may do**, and **must not
 do** under the authority of the Aurora Research Initiative (ARI).
 
-These constraints exist to preserve governance separation, enable deterministic enforcement by
-CRI-CORE, and ensure long-term reproducibility and epistemic integrity.
+These constraints preserve governance separation, enable deterministic enforcement by CRI-CORE, and
+ensure long-term reproducibility and epistemic integrity.
 
 ---
 
@@ -55,9 +55,14 @@ AWO MUST:
 - Generate ARI-compliant metadata for all workflow artifacts
 - Propagate metadata across workflow steps and outputs
 - Validate metadata presence and structure prior to step transitions
-- Surface metadata in human-reviewable form
+- Surface metadata in a **human-reviewable or human-renderable form**
 
-Metadata validation by AWO does not confer authority; final enforcement is performed by CRI-CORE.
+**Reviewability Requirement:**  
+Metadata and intermediate representations MUST be reviewable **on demand**. Native storage MAY be
+binary or optimized, provided it can be deterministically rendered into a human-readable form for
+audit, debugging, or dispute resolution purposes.
+
+Final enforcement of metadata completeness is performed by CRI-CORE.
 
 ---
 
@@ -65,12 +70,20 @@ Metadata validation by AWO does not confer authority; final enforcement is perfo
 
 AWO MUST:
 
-- Expose complete reasoning chains
-- Preserve step-level interpretability
-- Avoid hidden or implicit reasoning transitions
-- Record intermediate states in a reviewable format
+- Expose all **orchestration-level reasoning decisions**
+- Preserve step-level interpretability of workflow control flow
+- Avoid hidden or implicit transitions at the orchestration layer
+- Record intermediate states in a reviewable or renderable format
 
-AWO MUST NOT compress, obscure, or bypass reasoning steps.
+**Opaque Dependency Clarification:**  
+Internal logic of external libraries, runtimes, or hardware kernels (e.g., numerical solvers,
+ML frameworks, CUDA kernels) is considered opaque. Such components MUST be:
+- Explicitly invoked
+- Version-pinned
+- Treated as black-box operations within the reasoning chain
+
+AWO is not required to expose internal logic of opaque dependencies but MUST expose when and why
+they are invoked.
 
 ---
 
@@ -91,10 +104,13 @@ AWO expresses intent; CRI-CORE enforces determinism.
 
 AWO MUST:
 
-- Log all workflow steps and state transitions
-- Capture inputs, outputs, and control flow decisions
-- Produce human-readable audit trails
+- Log all workflow steps and control-flow decisions
+- Capture inputs, outputs, and state transitions
+- Produce audit trails that are human-reviewable or human-renderable on demand
 - Prohibit silent branches or undocumented behavior
+
+High-throughput workflows MAY implement tiered logging or debug levels, provided audit completeness
+can be reconstructed post hoc.
 
 ---
 
