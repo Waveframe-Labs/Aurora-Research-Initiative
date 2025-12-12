@@ -1,228 +1,188 @@
-# Aurora Research Initiative (ARI)
-## Metadata Policy v2.0.0
-
 ---
 title: "Metadata Policy"
-policy_version: "ARI-Metadata-2.0.0"
+filetype: "documentation"
+type: "governance"
 version: "2.0.0"
 status: "Active"
-author: "Waveframe Labs"
-maintainer: "Waveframe Labs"
-license: "Apache-2.0"
 created: "2025-11-27"
 updated: "2025-12-13"
+author: "Waveframe Labs"
+maintainer: "Waveframe Labs"
+contact: "swright@waveframelabs.org"
+license: "Apache-2.0"
 ai_assisted: "partial"
 ai_assistance_details: "AI-assisted drafting and structural review with full human oversight and final approval."
+policy_version: "ARI-Metadata-2.0.0"
 ---
 
-### Status
-**Active — Governance Law**
+# Aurora Research Initiative (ARI)
 
-This policy supersedes **ARI Metadata Policy v1.0.0** in its entirety.
+# Metadata Policy v2.0.0
 
-This policy defines the **mandatory metadata requirements** for all scientific, methodological, governance, and tooling artifacts published under the authority of the Aurora Research Initiative (ARI).
+**Status:** Active — Governance Law  
+**Supersedes:** ARI Metadata Policy v1.0.0 (in full)
 
 ---
 
 ## 1. Purpose
 
-Metadata is not descriptive ornamentation.  
-Within ARI, metadata is a **governance primitive**.
+This policy defines the mandatory metadata requirements for all **Markdown-based scientific artifacts** and governance documents published under the Aurora ecosystem. Its goal is to ensure that each artifact is **traceable, attributable, auditable, and reconstructible**.
 
-This policy establishes the minimum metadata required to:
-
-- Identify intellectual responsibility
-- Preserve provenance and auditability
-- Enable reproducibility across time, tools, and institutions
-- Ensure compliance with the Neurotransparency Doctrine
-- Prevent epistemic ambiguity in AI-assisted research
-
-Any artifact lacking required metadata **cannot be considered institutionally valid**, regardless of content quality.
+Artifacts lacking required metadata are **not institutionally valid** and MUST NOT be treated as compliant outputs.
 
 ---
 
 ## 2. Scope
 
-This policy applies to **all artifacts** produced, published, or archived under ARI authority, including but not limited to:
+This policy applies to:
 
-- Markdown documents
-- Specifications
-- Governance policies
-- Research manuscripts
-- Methodology documents
-- Case study documentation
-- Tooling documentation
-- Machine-generated outputs intended for publication
-- PDFs generated from Markdown sources
+- Governance documents within ARI
+- Method specifications and documentation within AWO
+- Enforcement and tooling documentation within CRI-CORE
+- Published scientific artifacts, reports, and case-study documents produced under the Aurora hierarchy
 
-This policy applies **equally** to human-authored and AI-assisted content.
+This policy governs **metadata blocks** included in Markdown files. It does not define PDF metadata fields, but **derived artifacts MUST preserve equivalent metadata** (see Section 7).
 
 ---
 
-## 3. Governance Position
+## 3. Governance and Enforcement Separation
 
-- ARI defines **what metadata is required**.
-- ARI does **not** define how metadata is injected, validated, or enforced.
-- Tooling that injects or validates metadata operates **downstream** of this policy.
+This policy defines institutional law. Enforcement is implemented by external tooling (e.g., validators, CI checks, Doc Guard, Stamp) that MUST conform to this policy.
 
-This separation ensures that **governance cannot be altered by tooling convenience**.
+Tooling MAY flag, block, or report violations; however, the policy itself is the authoritative reference, not any specific tool implementation.
 
 ---
 
-## 4. Required Metadata Fields
+## 4. Required Metadata Block
 
-All Markdown-based scientific or governance artifacts **MUST** include a top-level metadata block containing the following fields.
+Every governed Markdown file MUST begin with a **top-of-file YAML metadata block** delimited by `---` lines.
+
+Example:
+
+```yaml
+---
+title: "Example Artifact"
+filetype: "documentation"
+type: "specification"
+version: "1.0.0"
+status: "Draft"
+created: "2025-12-01"
+updated: "2025-12-10"
+author: "Waveframe Labs"
+maintainer: "Waveframe Labs"
+license: "CC-BY-4.0"
+ai_assisted: "true"
+ai_assistance_details: "Drafted with AI assistance; reviewed and approved by maintainer."
+---
+```
+
+---
+
+## 5. Required Fields
+
+The following fields are REQUIRED unless explicitly exempted by this policy:
 
 ### M.1 — Title
-```yaml
-title:
-```
-A human-readable title uniquely identifying the artifact.
 
----
+- `title` MUST be present.
+- `title` MUST be a human-readable string.
 
 ### M.2 — Version
-```yaml
-version:
-```
-A semantic version identifier for the artifact itself.
 
-Versioning is governed by ARI semantic versioning rules and must reflect the epistemic impact of changes.
-
----
+- `version` MUST be present.
+- `version` MUST follow semantic versioning: `MAJOR.MINOR.PATCH`.
 
 ### M.3 — Status
-```yaml
-status:
-```
-One of:
-- Draft
-- Active
-- Archived
-- Superseded
 
-Status indicates the artifact’s current institutional standing.
-
----
+- `status` MUST be present.
+- `status` MUST be one of: `Draft`, `Active`, `Archived`, `Superseded`.
 
 ### M.4 — Required Author Attribution
-```yaml
-author:
-```
 
-All Markdown-based scientific artifacts **MUST** include an explicit `author` field.
+- `author` MUST be present.
+- `author` MUST identify the responsible **human or organizational entity** for intellectual content.
+- Anonymous authorship is not permitted under standard ARI governance.
+- AI systems MUST NOT be listed as `author`.
 
-This field identifies the **human or organizational entity** responsible for the intellectual content of the artifact.
+### M.5 — Dates
 
-- The author may be:
-  - A named individual
-  - A collective entity (e.g., “Waveframe Labs”)
-- AI systems **MUST NOT** be listed as authors.
-- Absence of this field constitutes a **metadata compliance violation**.
-
----
-
-### M.5 — Maintainer
-```yaml
-maintainer:
-```
-The entity responsible for maintaining the artifact over time.
-
----
+- `created` MUST be present.
+- `updated` MUST be present.
+- Both MUST use ISO-8601 date format: `YYYY-MM-DD`.
 
 ### M.6 — License
-```yaml
-license:
-```
-The license governing use, redistribution, and modification of the artifact.
+
+- `license` MUST be present.
+- `license` MUST be an SPDX identifier when available (e.g., `Apache-2.0`, `CC-BY-4.0`, `CC-BY-NC-SA-4.0`).
+
+### M.7 — AI Assistance Disclosure
+
+- `ai_assisted` MUST be present.
+- `ai_assisted` MUST be one of: `"true"`, `"false"`, `"partial"` (string enum).
+- If `ai_assisted` is `"true"` or `"partial"`, `ai_assistance_details` MUST be present.
+- If `ai_assisted` is `"false"`, `ai_assistance_details` MUST NOT appear.
+
+Disclosure MUST be accurate. The goal is accountability without requiring proprietary details.
 
 ---
 
-### M.7 — Created / Updated Dates
-```yaml
-created:
-updated:
-```
-ISO-8601 formatted dates indicating initial creation and most recent substantive update.
+## 6. Optional Fields
 
----
+The following fields are OPTIONAL unless required by a repo-level policy:
 
-### M.8 — AI Assistance Disclosure
-```yaml
-ai_assisted:
-```
+- `maintainer`
+- `contact`
+- `type`
+- `filetype`
+- `dependencies`
+- `anchors`
+- `policy_version` (recommended for policies)
 
-Valid values:
-- "true"
-- "false"
-- "partial"
-
-If `ai_assisted` is `"true"` or `"partial"`, the following field **MUST** be present:
-
-```yaml
-ai_assistance_details:
-```
-
-This field **MUST NOT** appear when `ai_assisted: "false"`.
-
-The disclosure **does not require** exact model versions or proprietary details. Unknown or custom models may be described descriptively.
-
-This policy governs **disclosure**, not surveillance.
-
----
-
-## 5. Optional Metadata Fields
-
-```yaml
-doi:
-orcid:
-related_artifacts:
-repository:
-```
-
-Optional fields **MUST NOT** contradict required fields.
-
----
-
-## 6. Format Requirements
-
-- Metadata **MUST** appear at the very top of the document.
-- YAML is the canonical metadata format.
-- Metadata **MUST** be machine-parseable without inference.
+Optional fields MUST NOT conflict with required fields and MUST be valid YAML.
 
 ---
 
 ## 7. Derived Artifacts
 
-When a PDF or other derived artifact is generated from a Markdown source:
+If a governed artifact is rendered or exported (e.g., Markdown → PDF), the derived artifact MUST preserve **equivalent metadata**, including at minimum:
 
-- The derived artifact **MUST inherit metadata** from the source file.
-- Loss of required metadata constitutes a **tooling failure**, not a policy exception.
-- Validation of inheritance lies with the maintainer or designated automation.
+- Title
+- Version
+- Status
+- Author attribution
+- License
+- AI assistance disclosure (when applicable)
 
-The source Markdown remains the canonical record.
-
----
-
-## 8. Compliance and Violations
-
-Artifacts missing required metadata are **non-compliant** and **MUST NOT** be treated as institutionally valid.
-
-This policy defines **law**, not punishment.
+Maintainers or designated automation are responsible for validating that derived artifacts retain metadata equivalence.
 
 ---
 
-## 9. Version Authority
+## 8. Institutional Validity
 
-This document is **Metadata Policy v2.0.0**.
+Any governed artifact that:
 
-- Changes to required fields or compliance conditions **MUST** result in a major version increment.
-- Editorial or non-normative clarifications **MAY** be released as minor or patch versions.
+- lacks a required field,
+- contains an invalid field value,
+- violates an explicit prohibition in this policy,
+
+is **noncompliant**.
+
+Noncompliant artifacts MUST NOT be treated as ARI-valid institutional outputs, and MUST NOT be used as authoritative references for downstream governance, tooling, or research claims.
 
 ---
 
-## 10. Closing Principle
+## 9. Policy Versioning
 
-Metadata is the mechanism by which **truth remains attributable, inspectable, and reproducible** over time.
+Changes to this policy MUST follow semantic versioning:
 
-Without metadata, artifacts decay into authority without accountability.
+- MAJOR: changes to required fields, field meanings, allowed enums, or compliance rules
+- MINOR: additions that do not change compliance requirements
+- PATCH: formatting, clarifications, and non-normative wording changes that do not change enforcement logic
+
+Policy version increments are governance actions and MUST be logged and released according to ARI release practice.
+
+---
+
+## 10. Ratification
+
+This policy is ratified upon publication in the ARI repository and is binding across the Aurora ecosystem from that point forward.
