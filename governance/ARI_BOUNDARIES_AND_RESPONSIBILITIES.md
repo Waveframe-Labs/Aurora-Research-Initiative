@@ -1,6 +1,6 @@
 ---
 title: "ARI Boundaries and Responsibilities"
-version: "1.1.0"
+version: "1.1.1"
 status: "Active"
 created: "2025-11-26"
 updated: "2025-12-12"
@@ -14,9 +14,9 @@ ai_assistance_details: "AI-assisted structural review and consistency checking u
 policy_version: "ARI-Metadata-2.0.0"
 dependencies:
   - "GOVERNANCE_MODEL.md"
-  - "Neurotransparency_Doctrine.md"
+  - "EPISTEMIC_DOCTRINE.md"
 anchors:
-  - "ARI-BOUNDARIES-v1.1"
+  - "ARI-BOUNDARIES-v1.1.1"
 ---
 
 # ARI Boundaries and Responsibilities
@@ -67,10 +67,10 @@ ARI does not build, execute, or enforce.
 
 AWO is responsible for:
 
-- Translating ARI and Neurotransparency requirements into procedural workflow logic
+- Translating ARI and epistemic requirements into procedural workflow logic
 - Orchestrating reasoning steps in a structured, auditable manner
 - Producing workflow artifacts subject to ARI legitimacy rules
-- Performing metadata handling until superseded by CRI-CORE
+- Performing metadata generation, subject to validation and encapsulation by CRI-CORE
 
 ### Explicit Prohibitions
 
@@ -95,10 +95,10 @@ AWO does not govern, enforce, or validate.
 CRI-CORE is responsible for:
 
 - Deterministic execution of workflows
-- Integrity validation and identity binding
+- Integrity verification and identity binding
 - Attestation independence checks
 - Reproducible environment capture
-- Execution without interpretive authority
+- **Halting execution when integrity or provenance validation fails**
 
 ### Explicit Prohibitions
 
@@ -111,7 +111,7 @@ CRI-CORE may **not**:
 - Modify metadata definitions
 - Act as a reasoning or decision-making system
 
-CRI-CORE enforces.  
+CRI-CORE enforces execution integrity.  
 CRI-CORE does not reason, decide, or govern.
 
 ---
@@ -157,7 +157,7 @@ Case studies are responsible for:
 Case studies may **not**:
 
 - Modify governance or epistemic rules
-- Alter method logic or enforcement behavior
+- Alter core method logic or enforcement behavior
 - Bypass provenance or metadata requirements
 - Self-govern under any circumstances
 
@@ -174,7 +174,7 @@ They do not govern, interpret, or enforce.
 | **AWO** | Workflow logic | Governance, epistemics, enforcement |
 | **CRI-CORE** | Deterministic enforcement | Workflow logic, epistemics, governance |
 | **Waveframe Labs** | Tooling and demos | ARI doctrine, governance |
-| **Case Studies** | Applied research artifacts | Any upstream system |
+| **Case Studies** | Applied research artifacts | Core logic or governance policy |
 
 ---
 
