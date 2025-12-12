@@ -1,156 +1,162 @@
 ---
 title: "ARI Roadmap"
-version: "1.0.0"
-status: "Final — Evolution Plan"
+version: "1.1.0"
+status: "Active"
 created: "2025-11-26"
-type: "roadmap"  
-doi: "10.5281/zenodo.17743096"  
+updated: "2025-12-12"
+type: "roadmap"
+doi: "10.5281/zenodo.17743096"
+author: "Waveframe Labs"
+maintainer: "Waveframe Labs"
+license: "Apache-2.0"
+ai_assisted: "partial"
+ai_assistance_details: "AI-assisted metadata normalization and structural consistency review under human oversight."
+policy_version: "ARI-Metadata-2.0.0"
+anchors:
+  - "ARI-ROADMAP-v1.1"
 ---
 
-# Aurora Research Initiative — Roadmap (v1.0.0)
+# Aurora Research Initiative — Roadmap (v1.1.0)
 
 This roadmap defines the strategic evolution of the **Aurora Research Initiative (ARI)** across
 multiple phases. It establishes how ARI grows from its foundational architecture into a fully mature
-institution governing reproducible AI-human scientific workflows and tooling.
+institution governing reproducible AI–human scientific workflows and tooling.
 
-The roadmap ensures long-term structural integrity and prevents governance drift.
+The roadmap is descriptive, not authoritative; governance authority is defined by ARI constitutional
+documents. This file exists to provide planning clarity and long-horizon coherence.
 
 ---
 
-# 1. Phase I — Foundational Architecture (Current Phase)
+## 1. Phase I — Foundational Architecture (Completed)
 
-**Objective:** Establish ARI as an independent institutional layer.
+**Objective:** Establish ARI as an independent institutional governance layer.
 
-**Deliverables:**
+**Delivered:**
 - ARI repository creation  
 - `README.md`  
-- `ARI_ARCHITECTURE.md`  
-- `GOVERNANCE_MODEL.md`  
+- `architecture/ARI_ARCHITECTURE.md`  
+- Core governance documents  
 - `INIT_LOG.md`  
-- roadmap creation  
-- initial folder structure  
+- Governance logging framework  
+- Baseline folder structure  
 
-**Criteria for completion:**
+**Completion Criteria (Satisfied):**
 - Governance baseline stable  
 - Architecture baseline established  
 - Provenance chain active  
-- No major structural inconsistencies remain  
+- No unresolved structural inconsistencies  
 
 ---
 
-# 2. Phase II — Metadata & Epistemic Foundations
+## 2. Phase II — Metadata & Epistemic Foundations (Completed)
 
-**Objective:** Define the epistemic rules and metadata structures that govern the entire Aurora ecosystem.
+**Objective:** Define the epistemic rules and metadata structures governing the Aurora ecosystem.
 
-**Planned documents:**
-- `epistemics/EPISTEMIC_DOCTRINE.md`  
-- `epistemics/METADATA_POLICY.md`  
-- `epistemics/PROVENANCE_SPEC.md`  
+**Delivered:**
+- `EPISTEMIC_DOCTRINE.md`  
+- `METADATA_POLICY.md`  
+- Governance normalization and compliance audit  
 
 **Outcomes:**
-- audit-first epistemology codified  
-- metadata structure standardized  
-- documentation invariants defined  
-- provenance schema formalized  
+- Audit-first epistemology codified  
+- Metadata structure standardized  
+- Provenance expectations formalized  
+- Machine-valid governance artifacts  
 
 **Dependencies:**  
-Requires Phase I to be complete.
+Phase I
 
 ---
 
-# 3. Phase III — Integration with AWO v4.2+
+## 3. Phase III — Integration with AWO (In Progress)
 
-**Objective:** Ensure the Aurora Workflow Orchestration (AWO) method is fully aligned with ARI governance.
+**Objective:** Ensure Aurora Workflow Orchestration (AWO) is fully aligned with ARI governance.
 
-**Deliverables:**
-- governance compliance criteria for workflows  
-- metadata enforcement expectations  
-- role separation boundaries for AWO  
-- integration guidelines between AWO and ARI provenance  
+**Focus Areas:**
+- Governance compliance criteria for workflows  
+- Metadata enforcement expectations  
+- Role separation boundaries  
+- Removal of implicit governance from method logic  
 
 **Goals:**
-- AWO adopts ARI policies  
-- governance and method boundaries clarified  
-- non-deterministic governance removed from AWO  
-- execution pipeline operates under ARI-defined epistemic rules  
+- AWO adopts ARI policies explicitly  
+- Method and governance boundaries enforced  
+- Reasoning pipelines remain auditable  
 
 **Dependencies:**  
-Requires metadata & epistemic documents from Phase II.
+Phase II
 
 ---
 
-# 4. Phase IV — CRI-CORE Alignment & Onboarding
+## 4. Phase IV — CRI-CORE Alignment & Enforcement Transition (Planned)
 
-**Objective:** Transition enforcement and deterministic execution from AWO into CRI-CORE.
+**Objective:** Transition deterministic execution and enforcement from AWO into CRI-CORE.
 
-**Deliverables:**
-- governance requirements for deterministic tooling  
-- identity-binding rules  
-- attestation-independence criteria  
-- provenance verification expectations  
-- CRI-CORE onboarding guidelines  
+**Planned Deliverables:**
+- Deterministic tooling requirements  
+- Identity-binding and attestation rules  
+- Provenance verification criteria  
+- CRI-CORE onboarding and conformance guidance  
 
 **Goals:**
-- clear separation between method (AWO) and engine (CRI)  
-- governance constraints formalized for tooling  
-- deterministic execution fully delegated to CRI-CORE  
+- Clear separation between method (AWO) and engine (CRI)  
+- Enforcement authority exercised mechanically  
+- Reproducibility guarantees hardened  
 
 **Dependencies:**  
-Requires AWO integration (Phase III).
+Phase III
 
 ---
 
-# 5. Phase V — Governance Maturity & Public Transparency
+## 5. Phase V — Governance Maturity & Public Transparency (Planned)
 
-**Objective:** Formalize ARI as a public-facing, reproducible governance institution.
+**Objective:** Formalize ARI as a public-facing governance institution.
 
-**Deliverables:**
-- public governance documentation  
-- licensing strategy  
-- ARI website section  
-- maturity model for governance  
-- transparency dashboards  
-- versioned public releases  
+**Planned Deliverables:**
+- Public governance documentation  
+- Licensing strategy  
+- ARI web presence  
+- Governance maturity model  
+- Transparency dashboards  
 
 **Outcomes:**
-- public trust  
-- transparent accountability  
-- governance reproducibility  
-- institution-level clarity  
+- Public trust  
+- Transparent accountability  
+- Institution-level clarity  
 
 **Dependencies:**  
-Phases I–IV completed.
+Phases I–IV
 
 ---
 
-# 6. Phase VI — Certification & Ecosystem Expansion
+## 6. Phase VI — Certification & Ecosystem Expansion (Long-Term)
 
-**Objective:** Establish ARI as the governing standard for reproducible scientific workflows.
+**Objective:** Establish ARI as a recognized standard for reproducible scientific workflows.
 
-**Key initiatives:**
-- reproducibility certification model  
-- multi-agent governance expansion  
-- collaboration guidelines  
-- case study expansion  
-- governance-based validation pathways  
+**Key Initiatives:**
+- Reproducibility certification framework  
+- Multi-agent governance expansion  
+- External collaboration guidelines  
+- Case study ecosystem growth  
 
-**Long-term outcomes:**
-- institutional credibility  
-- widespread adoption of ARI-aligned governance  
-- AWO and CRI-CORE recognized as reproducible research infrastructure  
-
----
-
-# 7. Revision & Governance
-
-All roadmap changes must be logged in `logs/GOV_LOG.md` with:
-- version increments  
-- rationale  
-- dependencies noted  
-- backward linkage  
-
-No silent changes permitted.
+**Long-Term Outcomes:**
+- Institutional credibility  
+- Broad adoption of ARI-aligned governance  
+- AWO and CRI-CORE recognized as research infrastructure  
 
 ---
 
-This roadmap defines the path toward institutional maturity for the Aurora Research Initiative.
+## 7. Revision & Governance
+
+All roadmap changes must:
+
+- comply with ARI Metadata Policy  
+- be logged in `GOVERNANCE_LOG.md`  
+- include rationale and dependency notes  
+- preserve backward traceability  
+
+No silent revisions permitted.
+
+---
+
+This roadmap provides a non-authoritative planning view of ARI’s institutional evolution.
