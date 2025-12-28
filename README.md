@@ -22,7 +22,7 @@ anchors:
 ---
 
 <p align="center">
-  <img src="figures/HERO_BANNER.png" width="650" alt="Aurora Research Initiative">
+  <img src="figures/ARI_banner_v2.png" width="650" alt="Aurora Research Initiative">
 </p>
 
 [![Waveframe Labs](https://img.shields.io/badge/WAVEFRAME%20LABS-Institutional%20Repository-FF6A00?style=flat)](https://waveframelabs.org)
