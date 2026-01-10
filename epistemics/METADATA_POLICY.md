@@ -25,7 +25,7 @@ copyright:
   year: "2026"
 
 ai_assisted: "partial"
-ai_assistance_details: "AI-assisted revision under human oversight; alignment with AWO v2.0.0 metadata normalization."
+ai_assistance_details: "AI-assisted revision under human oversight; aligned with AWO v2.0.0 metadata normalization."
 
 anchors:
   - "ARI-METADATA-POLICY-v3.0.1"
@@ -69,6 +69,7 @@ Every governed Markdown file MUST begin with a `---` fenced YAML block containin
 title
 filetype
 type
+domain
 version
 doi
 status
@@ -84,6 +85,8 @@ dependencies (array)
 anchors (array)
 ```
 
+All fields listed above are **mandatory** unless otherwise specified by a system-level override.
+
 ---
 
 ## 4. Field Requirements
@@ -92,8 +95,10 @@ anchors (array)
 - MUST be included
 - MUST be a human-readable string
 
+---
+
 ### 4.2 Filetype
-Defines the form of the file.  
+Defines the structural nature of the file.  
 MUST be one of:
 
 - documentation
@@ -103,8 +108,10 @@ MUST be one of:
 - log
 - schema
 
-### 4.3 Type
-Defines normative authority.  
+---
+
+### 4.3 Type (Authority Level)
+Defines the **normative authority** of the document.  
 MUST be one of:
 
 - normative
@@ -112,16 +119,41 @@ MUST be one of:
 - guidance
 - specification
 
+This field determines how CRI-CORE, Stamp, and related tooling interpret document authority.
+
+---
+
+### 4.3A Domain (Conceptual Layer)
+**New in v3.0.1**
+
+The `domain` field defines the **conceptual layer** in the Aurora ecosystem to which the document belongs.
+
+MUST be one of:
+
+- governance
+- methodology
+- enforcement
+- documentation
+- case-study
+
+`domain` disambiguates document category from normative authority (`type`) and is required for validation, classification, and contract mapping.
+
+---
+
 ### 4.4 Version
 - MUST follow semantic versioning (`MAJOR.MINOR.PATCH`)
 
+---
+
 ### 4.5 DOI
 - MUST be present
-- README and concept-level docs MUST use concept DOI
-- Versioned artifacts MUST use version DOI or placeholder:
+- README and concept-level documents MUST use concept DOI
+- Version-level artifacts MUST use version DOI or placeholder format:
   ```
   doi: "TBD-2.0.0"
   ```
+
+---
 
 ### 4.6 Status
 MUST be one of:
@@ -131,10 +163,12 @@ MUST be one of:
 - Archived
 - Deprecated
 
+---
+
 ### 4.7 Dates
 - `created` MUST NOT change once set
-- `updated` MUST reflect real modification event
-- MUST follow ISO-8601
+- `updated` MUST reflect real modification date
+- MUST follow ISO-8601 (`YYYY-MM-DD`)
 
 ---
 
@@ -149,8 +183,10 @@ author:
   orcid:
 ```
 
-- MUST identify the responsible human
+- MUST identify a human originator
 - AI MUST NOT be listed as author
+
+---
 
 ### 5.2 Maintainer
 
@@ -160,7 +196,9 @@ maintainer:
   url:
 ```
 
-- MUST identify responsible organizational entity
+- MUST identify the organizational entity responsible for stewardship
+
+---
 
 ### 5.3 Copyright
 
@@ -170,7 +208,7 @@ copyright:
   year:
 ```
 
-- MUST reflect intellectual ownership
+- MUST reflect intellectual ownership and publication year
 
 ---
 
@@ -186,16 +224,16 @@ MUST be one of:
 ### 6.2 ai_assistance_details
 - MUST be present for `"partial"` or `"extensive"`
 - MUST NOT appear for `"none"`
-- MUST describe nature of AI contribution
+- MUST describe the nature of AI contribution accurately
 
 ---
 
 ## 7. Dependencies
 
-- MUST be an array of relative paths
-- MUST point to valid files
-- MUST NOT contain circular references
-- SHOULD include every document the current file depends on
+- MUST be a list of relative paths
+- MUST resolve to actual files
+- MUST NOT form circular graphs
+- SHOULD include all referenced or upstream documents
 
 ---
 
@@ -206,7 +244,7 @@ MUST be one of:
   ```
   <SYSTEM>-<DOCNAME>-v<MAJOR.MINOR.PATCH>
   ```
-- MUST be unique within the repository
+- MUST be unique across the repository
 
 ---
 
@@ -216,12 +254,12 @@ Generated outputs **MUST preserve metadata equivalence**, including:
 
 - title
 - version
-- author
-- license
+- DOIs
+- authorship
 - AI provenance
-- DOI when applicable
+- license
 
-Stamp and CRI-CORE MAY enforce this.
+Stamp and CRI-CORE MAY enforce this automatically.
 
 ---
 
@@ -229,27 +267,31 @@ Stamp and CRI-CORE MAY enforce this.
 
 An artifact is **noncompliant** if:
 
-- Any required field is missing  
-- Any field uses invalid or disallowed values  
-- The metadata block is malformed  
+- any required field is missing  
+- fields use invalid or disallowed values  
+- metadata format is malformed  
 - AI attribution is incorrect  
-- DOIs are absent or mismatched  
-- Dependencies do not resolve  
+- DOIs are missing or mismatched  
+- dependencies cannot resolve  
 
-Noncompliant artifacts MUST NOT be used as authoritative.
+Noncompliant artifacts MUST NOT be treated as authoritative.
 
 ---
 
 ## 11. Policy Versioning
 
-This policy increments as follows:
+This policy increments according to:
 
-- MAJOR — breaking changes to field set or semantics  
-- MINOR — new optional fields, additional clarity  
-- PATCH — non-behavioral clarifications  
+- **MAJOR** — breaking changes to field set or semantics  
+- **MINOR** — additive, non-breaking enhancements  
+- **PATCH** — clarifications, structural corrections, or metadata-level fixes  
+
+v3.0.1 is a **PATCH** revision introducing explicit domain-field requirements and aligning metadata semantics.
 
 ---
 
 ## 12. Ratification
 
-This policy becomes binding upon publication in the ARI repository and governs all subsequent metadata across Aurora projects.
+This policy becomes binding upon publication in the ARI repository and governs all subsequent metadata across Aurora systems.
+
+---
