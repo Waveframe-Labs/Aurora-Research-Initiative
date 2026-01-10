@@ -295,3 +295,7 @@ v3.0.1 is a **PATCH** revision introducing explicit domain-field requirements an
 This policy becomes binding upon publication in the ARI repository and governs all subsequent metadata across Aurora systems.
 
 ---
+
+<p align="center">
+  <sub>© 2026 Waveframe Labs · <a href="https://waveframelabs.org">waveframelabs.org</a></sub>
+</p>  
