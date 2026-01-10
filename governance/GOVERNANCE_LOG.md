@@ -22,6 +22,39 @@ anchors:
 
 This log records all governance-level changes, decisions, approvals, and version increments within the Aurora Research Initiative (ARI).
 
+---  
+
+## 2026-01-09 — MAJOR REVISION: METADATA POLICY v3.0.0 RELEASED
+
+**Event:** Canonical Metadata Schema Revision (Major Version Change)
+
+**Summary:**  
+The ARI Metadata Policy has been fully revised and reissued as **v3.0.0**, replacing v2.0.0 in full. This constitutes a major governance update introducing a strict, machine-validated metadata schema aligned with AWO v2.0.0 and designed for enforcement in upcoming tooling (Stamp, CRI-CORE).
+
+**Key Changes:**
+- New required fields added (filetype, type, doi, maintainer, dependencies, anchors)
+- `author` converted from string → structured object (name, email, ORCID)
+- AI assistance enum updated (`none`, `partial`, `extensive`)
+- DOI usage formalized (concept vs version-level DOIs)
+- ISO-8601 date enforcement standardized
+- Normative vs non-normative `type` field strictly defined
+- Dependencies and anchors defined as mandatory arrays
+- Fully specified field validation rules for automation
+- Backward-incompatible changes acknowledged
+
+**Version Impact:**  
+- **MAJOR update** — v2.x metadata blocks are no longer compliant under v3.0.0
+- Enforcement tooling (Stamp, CRI-CORE) must update validation schemas
+- Future documents must adopt the new metadata structure
+
+**Rationale:**  
+This update establishes a deterministic metadata framework essential for reproducibility, auditability, and automated validation. It aligns metadata governance with actual usage patterns in AWO v2.0.0, prepares for enforcement automation, and corrects inconsistencies in the prior policy’s field definitions.
+
+**Version State:**  
+- ARI_VERSION: **3.0.0**
+- Metadata Policy Version: **v3.0.0**
+- Global Ecosystem State: Aligned with AWO v2.0.0 metadata normalization
+
 ---
 
 ## 2025-11-27 — INITIAL GOVERNANCE ESTABLISHMENT
