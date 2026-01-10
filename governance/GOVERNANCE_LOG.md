@@ -24,6 +24,43 @@ This log records all governance-level changes, decisions, approvals, and version
 
 ---  
 
+## 2026-01-09 — ARI v3.0.1: Metadata Policy & Schema Alignment
+
+**Event:** ARI Metadata Policy and JSON Schema aligned and bumped to v3.0.1  
+**Change Type:** Patch-Level Governance + Schema Alignment
+
+**Summary:**  
+Following the ARI Metadata Policy v3.0.0 release, a classification mismatch was identified between the `type` field (used as an authority-level classifier) and its use as a governance-domain label in the policy metadata. To resolve this and maintain strict schema–policy alignment, both the policy metadata and the ARI metadata JSON schema were updated and released as **v3.0.1**.
+
+**Policy Changes (Metadata Policy v3.0.1):**
+- Updated `type` from `"governance"` → `"normative"` to reflect authority level.
+- Introduced `domain: "governance"` to capture the conceptual layer of the document.
+- Status confirmed as `Active`.
+- Version bumped from `3.0.0` → `3.0.1` to reflect this metadata-level correction.
+
+**Schema Changes (Metadata Schema v3.0.1):**
+- Added required `domain` field with enum:
+  - `governance`
+  - `methodology`
+  - `enforcement`
+  - `documentation`
+  - `case-study`
+- Updated `$id` to `ari-metadata-3.0.1.json`.
+- Updated schema description to indicate patch release aligning schema semantics with Metadata Policy v3.x.
+- Preserved all other v3.0.0 rules (no additional behavioral changes).
+
+**Governance Impact:**
+- No new governance principles introduced beyond clarifying the separation of **authority level** (`type`) and **conceptual layer** (`domain`).
+- Metadata Policy content remains substantively unchanged; this is a classification and alignment patch.
+- No new ADR created; this change is treated as a patch-level refinement and consistency fix within the existing governance framework.
+
+**Version State:**
+- ARI_VERSION: **3.0.1**
+- Metadata Policy: **v3.0.1**
+- Metadata Schema: **v3.0.1**  
+
+---  
+
 ## 2026-01-09 — MAJOR REVISION: METADATA POLICY v3.0.0 RELEASED
 
 **Event:** Canonical Metadata Schema Revision (Major Version Change)
