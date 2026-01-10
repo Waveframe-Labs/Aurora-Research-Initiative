@@ -296,6 +296,6 @@ This policy becomes binding upon publication in the ARI repository and governs a
 
 ---
 
-<p align="center">
-  <sub>© 2026 Waveframe Labs · <a href="https://waveframelabs.org">waveframelabs.org</a></sub>
-</p>  
+<div align="center">
+  <sub>© 2026 Waveframe Labs — Independent Open-Science Research Entity · Governed under the Aurora Research Initiative (ARI)</sub>
+</div> 
