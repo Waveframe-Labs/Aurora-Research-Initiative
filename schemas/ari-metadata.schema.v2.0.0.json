@@ -1,106 +1,177 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://waveframelabs.org/schemas/ari-metadata-2.0.0.json",
-  "title": "ARI Metadata Schema",
-  "description": "Normative metadata schema enforcing Aurora Research Initiative Metadata Policy v2.0.0",
+  "$id": "https://waveframelabs.org/schemas/ari-metadata-3.0.0.json",
+  "title": "ARI Metadata Schema v3.0.0",
+  "description": "Normative metadata schema enforcing ARI Metadata Policy v3.0.0",
   "type": "object",
+
   "required": [
     "title",
+    "filetype",
+    "type",
     "version",
+    "doi",
     "status",
-    "author",
     "created",
+    "updated",
+    "author",
+    "maintainer",
     "license",
-    "ai_assisted"
+    "copyright",
+    "ai_assisted",
+    "ai_assistance_details",
+    "dependencies",
+    "anchors"
   ],
+
   "properties": {
     "title": {
       "type": "string",
       "minLength": 1
     },
+
+    "filetype": {
+      "type": "string",
+      "enum": [
+        "documentation",
+        "specification",
+        "operational",
+        "adr",
+        "log",
+        "schema"
+      ]
+    },
+
+    "type": {
+      "type": "string",
+      "enum": [
+        "normative",
+        "non-normative",
+        "guidance",
+        "specification"
+      ]
+    },
+
     "version": {
       "type": "string",
       "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
     },
+
+    "doi": {
+      "type": "string",
+      "pattern": "^10\\.5281\\/zenodo\\.[0-9]+$|^TBD-[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "description": "Must be a Zenodo DOI or a TBD placeholder for unreleased versions."
+    },
+
     "status": {
       "type": "string",
       "enum": [
         "Draft",
         "Active",
         "Archived",
-        "Superseded"
+        "Deprecated"
       ]
     },
-    "author": {
-      "type": "string",
-      "minLength": 1,
-      "description": "Human or organizational author. AI authorship is forbidden."
-    },
-    "maintainer": {
-      "type": "string"
-    },
-    "license": {
-      "type": "string"
-    },
+
     "created": {
       "type": "string",
       "format": "date"
     },
+
     "updated": {
       "type": "string",
       "format": "date"
     },
-    "policy_version": {
-      "type": "string"
+
+    "author": {
+      "type": "object",
+      "required": ["name", "email", "orcid"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "email": { "type": "string", "format": "email" },
+        "orcid": {
+          "type": "string",
+          "pattern": "^https:\\/\\/orcid\\.org\\/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
+        }
+      }
     },
+
+    "maintainer": {
+      "type": "object",
+      "required": ["name", "url"],
+      "properties": {
+        "name": { "type": "string" },
+        "url": { "type": "string", "format": "uri" }
+      }
+    },
+
+    "license": {
+      "type": "string",
+      "description": "Must be an SPDX identifier such as Apache-2.0."
+    },
+
+    "copyright": {
+      "type": "object",
+      "required": ["holder", "year"],
+      "properties": {
+        "holder": { "type": "string" },
+        "year": { "type": "string", "pattern": "^[0-9]{4}$" }
+      }
+    },
+
     "ai_assisted": {
       "type": "string",
-      "enum": [
-        "true",
-        "false",
-        "partial"
-      ]
+      "enum": ["none", "partial", "extensive"]
     },
+
     "ai_assistance_details": {
-      "type": "string"
+      "type": "string",
+      "description": "Required if ai_assisted=partial or ai_assisted=extensive"
+    },
+
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(\\.|\\.\\.)\\/.+"
+      }
+    },
+
+    "anchors": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z0-9\\-]+-v[0-9]+\\.[0-9]+\\.[0-9]+$"
+      }
     }
   },
+
   "allOf": [
     {
       "if": {
         "properties": {
-          "ai_assisted": {
-            "enum": [
-              "true",
-              "partial"
-            ]
-          }
+          "ai_assisted": { "const": "none" }
         }
       },
       "then": {
-        "required": [
-          "ai_assistance_details"
-        ]
+        "properties": {
+          "ai_assistance_details": { "maxLength": 0 }
+        }
       }
     },
     {
       "if": {
         "properties": {
           "ai_assisted": {
-            "enum": [
-              "false"
-            ]
+            "enum": ["partial", "extensive"]
           }
         }
       },
       "then": {
-        "not": {
-          "required": [
-            "ai_assistance_details"
-          ]
-        }
+        "required": ["ai_assistance_details"]
       }
     }
   ],
-  "additionalProperties": true
+
+  "additionalProperties": false
 }
