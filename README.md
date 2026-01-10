@@ -1,13 +1,13 @@
 ---
 title: "Aurora Research Initiative (ARI) — Repository Overview"
-version: "2.0.0"
+version: "3.0.1"
 status: "Active — Governed Institution"
 created: "2025-11-27"
-updated: "2025-12-12"
+updated: "2026-01-10"
 type: "documentation"
 doi: "10.5281/zenodo.17743096"
 author: "Aurora Research Initiative (ARI)"
-policy_version: "ARI-Metadata-2.0.0"
+policy_version: "ARI-Metadata-v3.0.1"
 dependencies:
   - "GOVERNANCE_MODEL.md"
   - "ARI_BOUNDARIES_AND_RESPONSIBILITIES.md"
@@ -18,7 +18,7 @@ dependencies:
   - "EPISTEMIC_DOCTRINE.md"
   - "METADATA_POLICY.md"
 anchors:
-  - "ARI-README-v2.0"
+  - "ARI-README-v3.0.1"
 ---
 
 <p align="center">
@@ -107,7 +107,7 @@ README.md      This document
 
 ---
 
-## Core Governance Stack (v2.0.0)
+## Core Governance Stack (v3.0.1)
 
 The following documents collectively form the **Core Governance Stack**, ratified via ADRs:
 
@@ -160,7 +160,7 @@ Cite the **specific ARI version used** in your work.
 **Concept DOI (institution):**  
 https://doi.org/10.5281/zenodo.17743096
 
-This release corresponds to **ARI v2.0.0** — Constitutional Governance Release.
+This release corresponds to **ARI v3.0.1** — Constitutional Governance Release.
 
 Refer to `CITATION.cff` for machine-readable citation metadata.
 
@@ -169,7 +169,7 @@ Refer to `CITATION.cff` for machine-readable citation metadata.
 ## Status
 
 ```
-Version: 2.0.0
+Version: 3.0.1
 Role: Institutional Governance & Epistemic Authority
 Release: Constitutional Governance Release
 ```
