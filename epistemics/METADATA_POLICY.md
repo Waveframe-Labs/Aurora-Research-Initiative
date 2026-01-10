@@ -5,7 +5,7 @@ type: "governance"
 version: "3.0.0"
 doi: "10.5281/zenodo.17743096"
 status: "Draft"
-created: "2025-11-27
+created: "2025-11-27"  
 updated: "2026-01-09"
 
 author:
