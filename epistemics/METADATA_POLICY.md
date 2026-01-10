@@ -3,7 +3,7 @@ title: "ARI Metadata Policy"
 filetype: "documentation"
 type: "normative"
 domain: "governance"
-version: "3.0.0"
+version: "3.0.1"
 doi: "10.5281/zenodo.17743096"
 status: "Active"
 created: "2025-11-27"
@@ -28,11 +28,11 @@ ai_assisted: "partial"
 ai_assistance_details: "AI-assisted revision under human oversight; alignment with AWO v2.0.0 metadata normalization."
 
 anchors:
-  - "ARI-METADATA-POLICY-v3.0.0"
+  - "ARI-METADATA-POLICY-v3.0.1"
 ---
 
 # Aurora Research Initiative (ARI)
-# Metadata Policy v3.0.0 (Draft)
+# Metadata Policy v3.0.1
 
 ## 1. Purpose
 
