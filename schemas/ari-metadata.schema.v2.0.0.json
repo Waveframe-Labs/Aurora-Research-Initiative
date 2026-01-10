@@ -1,14 +1,16 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://waveframelabs.org/schemas/ari-metadata-3.0.0.json",
-  "title": "ARI Metadata Schema v3.0.0",
-  "description": "Normative metadata schema enforcing ARI Metadata Policy v3.0.0",
+  "$id": "https://waveframelabs.org/schemas/ari-metadata-3.0.1.json",
+  "title": "ARI Metadata Schema v3.0.1",
+  "description": "Patch release of the ARI metadata schema adding `domain` to align with ARI Metadata Policy v3.0.0 semantics.",
+
   "type": "object",
 
   "required": [
     "title",
     "filetype",
     "type",
+    "domain",
     "version",
     "doi",
     "status",
@@ -49,6 +51,17 @@
         "non-normative",
         "guidance",
         "specification"
+      ]
+    },
+
+    "domain": {
+      "type": "string",
+      "enum": [
+        "governance",
+        "methodology",
+        "enforcement",
+        "documentation",
+        "case-study"
       ]
     },
 
