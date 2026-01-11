@@ -24,6 +24,43 @@ This log records all governance-level changes, decisions, approvals, and version
 
 ---  
 
+## 2026-01-11 — Metadata Schema v3.0.2 Patch Alignment
+
+**Event:** Schema-only corrective update issued as **ARI Metadata Schema v3.0.2**  
+**Change Type:** Patch-Level Schema Correction (Non-Governance Revision)
+
+**Summary:**  
+A contradiction was identified between the ARI Metadata Policy v3.0.1 and the JSON Schema implementation regarding `ai_assistance_details`.  
+The policy requires that `ai_assistance_details` MUST NOT appear when `ai_assisted = "none"`, but the schema listed the field in the global `required` set, enabling empty-string compliance instead of conditional absence.
+
+To correct this misalignment without changing the normative policy or triggering an ARI version bump, the JSON Schema was updated and released as **v3.0.2**.
+
+**Schema Changes (v3.0.2):**
+- Removed `ai_assistance_details` from the global `required` list.  
+- Added conditional logic enforcing:
+  - `ai_assistance_details` **absent** when `ai_assisted = none`
+  - `ai_assistance_details` **required + non-empty** for `partial` or `extensive`  
+- Updated `$id` to `ari-metadata-3.0.2.json`.  
+- Preserved all other v3.0.1 rules unchanged.  
+- No semantic expansion; no new fields introduced.
+
+**Governance Impact:**  
+- **No policy change** — Metadata Policy v3.0.1 remains authoritative.  
+- **No ARI version change** — this is a schema-level correction only.  
+- **No CITATION.cff updates required.**  
+- **No repository-wide metadata normalization triggered.**
+
+**Rationale:**  
+This correction ensures the JSON Schema enforces the exact normative behavior defined by ARI Metadata Policy v3.0.1 without introducing new semantics or requiring cascading revisions across ARI, NTD, NTS, or dependent repositories.  
+It preserves system coherence while allowing tooling development (Stamp, CRI-CORE) to proceed without contradiction.
+
+**Version State After Update:**
+- ARI_VERSION: **3.0.1** (unchanged)  
+- Metadata Policy: **v3.0.1** (unchanged)  
+- Metadata Schema: **v3.0.2** (updated schema only)
+
+---  
+
 ## 2026-01-09 — ARI v3.0.1: Metadata Policy & Schema Alignment
 
 **Event:** ARI Metadata Policy and JSON Schema aligned and bumped to v3.0.1  
