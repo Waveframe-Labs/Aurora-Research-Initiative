@@ -3,7 +3,7 @@ title: "Governance Log"
 version: "1.1.1"
 status: "Active"
 created: "2025-11-27"
-updated: "2026-01-11"
+updated: "2026-01-27"
 type: "log"
 doi: "10.5281/zenodo.17743096"
 author: "Waveframe Labs"
@@ -21,6 +21,56 @@ anchors:
 # ARI Governance Log
 
 This log records all governance-level changes, decisions, approvals, and version increments within the Aurora Research Initiative (ARI).
+
+---  
+
+## 2026-01-27 — ARI Metadata Policy & Schema Historical Archive Restoration
+
+**Event:** Restoration and archival of historical ARI Metadata Policies and Schemas  
+**Change Type:** Governance Record Recovery (Non-Normative, Non-Revision)
+
+**Summary:**  
+During governance review, it was identified that earlier ARI Metadata Policy and Schema versions (v1.0.0 through v3.0.1) were no longer consistently dereferenceable in the repository due to prior overwrite-based update practices.  
+While artifacts correctly declared historical policy versions, the authoritative policy texts and schemas themselves were not uniformly preserved as immutable records, creating a traceability gap under ARI audit requirements.
+
+To restore full historical integrity, all previously released ARI Metadata Policies and Schemas were recovered from Zenodo releases and GitHub history and reintroduced into the repository as an explicit, immutable archive.
+
+This action restores the ability to reconstruct the exact governance and validation context under which past artifacts were created and approved.
+
+**Archive Actions Performed:**
+- Recovered and archived:
+  - METADATA_POLICY_v1.0.0.md  
+  - METADATA_POLICY_v2.0.0.md  
+  - METADATA_POLICY_v3.0.0.md  
+  - METADATA_POLICY_v3.0.1.md  
+- Recovered and archived corresponding JSON Schemas:
+  - ari-metadata.schema.v2.0.0.json  
+  - ari-metadata.schema.v3.0.0.json  
+  - ari-metadata.schema.v3.0.1.json  
+- Established a dedicated archive directory for historical governance artifacts.  
+- Locked archived artifacts as immutable references.  
+- Introduced repository-level `.gitattributes` rules to canonically enforce LF line endings for governance-critical text formats (`.md`, `.json`, `.yaml`, `.yml`) and platform-correct handling for executable scripts.
+
+**Governance Impact:**
+- **No policy semantics changed.**
+- **No schema semantics changed.**
+- **No ARI version bump issued.**
+- **No artifact compliance status altered.**
+- **No retroactive enforcement applied.**
+
+This action restores historical dereferenceability without revising or reinterpreting any previously approved artifacts.
+
+**Rationale:**  
+ARI governance requires that all declared policy and schema versions remain permanently accessible to enable auditability, reproducibility, and epistemic traceability.  
+This restoration corrects an archival deficiency originating from early development practices without imposing retroactive governance changes or forcing repository-wide revisions.
+
+The archive now serves as the authoritative historical record against which past and future validations may be contextualized, providing a stable foundation for forthcoming enforcement tooling (Stamp, CRI-CORE).
+
+**Version State After Update:**
+- ARI_VERSION: **unchanged**  
+- Active Metadata Policy: **v3.0.1**  
+- Active Metadata Schema: **v3.0.2 (schema-only patch)**  
+- Historical Policy & Schema Versions: **fully archived and dereferenceable**
 
 ---  
 
