@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://waveframelabs.org/schemas/ari-metadata-2.0.0.json",
+  "title": "ARI Metadata Schema",
+  "description": "Normative metadata schema enforcing Aurora Research Initiative Metadata Policy v2.0.0",
+  "type": "object",
+  "required": [
+    "title",
+    "version",
+    "status",
+    "author",
+    "created",
+    "license",
+    "ai_assisted"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Draft",
+        "Active",
+        "Archived",
+        "Superseded"
+      ]
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human or organizational author. AI authorship is forbidden."
+    },
+    "maintainer": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string",
+      "format": "date"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "policy_version": {
+      "type": "string"
+    },
+    "ai_assisted": {
+      "type": "string",
+      "enum": [
+        "true",
+        "false",
+        "partial"
+      ]
+    },
+    "ai_assistance_details": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "ai_assisted": {
+            "enum": [
+              "true",
+              "partial"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "ai_assistance_details"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "ai_assisted": {
+            "enum": [
+              "false"
+            ]
+          }
+        }
+      },
+      "then": {
+        "not": {
+          "required": [
+            "ai_assistance_details"
+          ]
+        }
+      }
+    }
+  ],
+  "additionalProperties": true
+}

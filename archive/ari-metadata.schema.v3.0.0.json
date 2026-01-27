@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://waveframelabs.org/schemas/ari-metadata-3.0.0.json",
+  "title": "ARI Metadata Schema v3.0.0",
+  "description": "Normative metadata schema enforcing ARI Metadata Policy v3.0.0",
+  "type": "object",
+
+  "required": [
+    "title",
+    "filetype",
+    "type",
+    "version",
+    "doi",
+    "status",
+    "created",
+    "updated",
+    "author",
+    "maintainer",
+    "license",
+    "copyright",
+    "ai_assisted",
+    "ai_assistance_details",
+    "dependencies",
+    "anchors"
+  ],
+
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+
+    "filetype": {
+      "type": "string",
+      "enum": [
+        "documentation",
+        "specification",
+        "operational",
+        "adr",
+        "log",
+        "schema"
+      ]
+    },
+
+    "type": {
+      "type": "string",
+      "enum": [
+        "normative",
+        "non-normative",
+        "guidance",
+        "specification"
+      ]
+    },
+
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+
+    "doi": {
+      "type": "string",
+      "pattern": "^10\\.5281\\/zenodo\\.[0-9]+$|^TBD-[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "description": "Must be a Zenodo DOI or a TBD placeholder for unreleased versions."
+    },
+
+    "status": {
+      "type": "string",
+      "enum": [
+        "Draft",
+        "Active",
+        "Archived",
+        "Deprecated"
+      ]
+    },
+
+    "created": {
+      "type": "string",
+      "format": "date"
+    },
+
+    "updated": {
+      "type": "string",
+      "format": "date"
+    },
+
+    "author": {
+      "type": "object",
+      "required": ["name", "email", "orcid"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "email": { "type": "string", "format": "email" },
+        "orcid": {
+          "type": "string",
+          "pattern": "^https:\\/\\/orcid\\.org\\/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
+        }
+      }
+    },
+
+    "maintainer": {
+      "type": "object",
+      "required": ["name", "url"],
+      "properties": {
+        "name": { "type": "string" },
+        "url": { "type": "string", "format": "uri" }
+      }
+    },
+
+    "license": {
+      "type": "string",
+      "description": "Must be an SPDX identifier such as Apache-2.0."
+    },
+
+    "copyright": {
+      "type": "object",
+      "required": ["holder", "year"],
+      "properties": {
+        "holder": { "type": "string" },
+        "year": { "type": "string", "pattern": "^[0-9]{4}$" }
+      }
+    },
+
+    "ai_assisted": {
+      "type": "string",
+      "enum": ["none", "partial", "extensive"]
+    },
+
+    "ai_assistance_details": {
+      "type": "string",
+      "description": "Required if ai_assisted=partial or ai_assisted=extensive"
+    },
+
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(\\.|\\.\\.)\\/.+"
+      }
+    },
+
+    "anchors": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z0-9\\-]+-v[0-9]+\\.[0-9]+\\.[0-9]+$"
+      }
+    }
+  },
+
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "ai_assisted": { "const": "none" }
+        }
+      },
+      "then": {
+        "properties": {
+          "ai_assistance_details": { "maxLength": 0 }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "ai_assisted": {
+            "enum": ["partial", "extensive"]
+          }
+        }
+      },
+      "then": {
+        "required": ["ai_assistance_details"]
+      }
+    }
+  ],
+
+  "additionalProperties": false
+}
