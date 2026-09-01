@@ -33,6 +33,8 @@ anchors:
 
 # Aurora Research Initiative (ARI)
 
+> **Current status (2026-09-01): Foundational institutional framework — maintenance mode.** ARI is preserved as published institutional-governance research. It does not currently govern the Waveframe product release process or serve as a runtime authority source. [Read the current repository boundary](STATUS.md).
+
 The **Aurora Research Initiative (ARI)** is the institutional governance and epistemic authority of the Aurora ecosystem.  
 ARI defines the **rules of correctness**, **constraints**, **doctrine**, and **change-control law** governing:
 
